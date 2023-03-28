@@ -1,0 +1,20 @@
+.container {
+  height: 20px;
+  width: 800px;
+  background-color: #bcbcbc;
+  border-radius: 5px;
+  margin: 20px;
+}
+
+.filler {
+  height: 20px;
+  background-color: rgb(63, 25, 106);
+  border-radius: 5px;
+  text-align: "right";
+}
+
+.label {
+  padding: 5px;
+  color: white;
+  font-weight: "bold";
+}
