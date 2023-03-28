@@ -3,9 +3,16 @@ import "./start.css";
 
 function Start() {
   return (
-    <>
-      <h1>DET HÄR ÄR START</h1> <Link to="/categories">FREE PLAY</Link>
-    </>
+    <div className="start-wrapper">
+      <div className="start">
+        <input type="text" placeholder="nickname.." />
+        <Link to="/categories">FREE PLAY</Link>
+        <a href="#">DAILY CHALLENGE</a>
+      </div>
+      <div className="highscore">
+        <p>Highscore</p>
+      </div>
+    </div>
   );
 }
 

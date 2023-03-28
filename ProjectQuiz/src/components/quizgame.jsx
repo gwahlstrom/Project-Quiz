@@ -24,7 +24,10 @@ function QuizGame() {
 
   useEffect(() => {
     if (data[count] && count < 10) {
-      const answersArray = [...data[count].incorrectAnswers, data[count].correctAnswer];
+      const answersArray = [
+        ...data[count].incorrectAnswers,
+        data[count].correctAnswer,
+      ];
       answersArray.sort(() => Math.random() - 0.5);
       const answersButton = answersArray.map((answer, index) => {
         return (
@@ -39,9 +42,9 @@ function QuizGame() {
 
   if (count >= 0 && count < 10) {
     return (
-      <>
+      <div className="question-wrapper">
         {data[count] ? (
-          <div>
+          <div className="question">
             <h3>
               {data[count].question}
               {data[count].category}
@@ -50,14 +53,18 @@ function QuizGame() {
         ) : (
           <p>loading...</p>
         )}
-        {answers}
+        <div className="answersdiv">{answers}</div>
         <Link to="/">Cancel</Link>
-      </>
+      </div>
     );
   } else if (count === 10) {
     return (
       <>
-        <Results correctAnswer={correct} amountOfAnswers={data.length} fetchedData={data} />
+        <Results
+          correctAnswer={correct}
+          amountOfAnswers={data.length}
+          fetchedData={data}
+        />
       </>
     );
   }

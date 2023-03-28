@@ -1,0 +1,18 @@
+.start-wrapper {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.start {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.highscore {
+  border: 1px solid black;
+  width: 200px;
+  height: 300px;
+}

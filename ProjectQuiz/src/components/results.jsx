@@ -10,14 +10,14 @@ function Results(props) {
   }, []);
 
   return (
-    <>
+    <div className="results-wrapper">
       <h1>Results</h1>
       <h2>
         You had {props.correctAnswer} correct out of {props.amountOfAnswers}!
       </h2>
       <p>(visa alla frågor och de korrekta/inkorrekta svaren)</p>
       <Link to="/">Play again</Link>
-    </>
+    </div>
   );
 }
 
