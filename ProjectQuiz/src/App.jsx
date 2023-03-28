@@ -9,7 +9,6 @@ import Categories from "./components/categories";
 function App() {
   return (
     <div className="wrapper">
-      <h1>The Quiz Game</h1>
       <Routes>
         <Route path="/" element={<Start />} />
         <Route path="/categories" element={<Categories />} />
