@@ -31,7 +31,11 @@ function QuizGame() {
       answersArray.sort(() => Math.random() - 0.5);
       const answersButton = answersArray.map((answer, index) => {
         return (
-          <button onClick={(e) => clickHandler(e)} key={index}>
+          <button
+            className="answerBtn"
+            onClick={(e) => clickHandler(e)}
+            key={index}
+          >
             {answer}
           </button>
         );
@@ -43,18 +47,25 @@ function QuizGame() {
   if (count >= 0 && count < 10) {
     return (
       <div className="question-wrapper">
-        {data[count] ? (
-          <div className="question">
-            <h3>
-              {data[count].question}
-              {data[count].category}
-            </h3>
+        <div className="main-questions">
+          <div className="imageDiv">
+            <p>Img here</p>
           </div>
-        ) : (
-          <p>loading...</p>
-        )}
-        <div className="answersdiv">{answers}</div>
-        <Link to="/">Cancel</Link>
+          {data[count] ? (
+            <div className="question">
+              <h3>
+                {data[count].question}
+                {/*                 {data[count].category} */}
+              </h3>
+            </div>
+          ) : (
+            <p>loading...</p>
+          )}
+          <div className="answersdiv">{answers}</div>
+        </div>
+        <div className="cancel">
+          <Link to="/">Cancel</Link>
+        </div>
       </div>
     );
   } else if (count === 10) {
