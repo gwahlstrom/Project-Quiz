@@ -2,14 +2,14 @@ import "./footer.css";
 
 function Footer() {
   return (
-    <>
-      <ul>
-        <li>GitHub</li>
-        <li>Contact</li>
-        <li>About us</li>
-        <li>Help</li>
-      </ul>
-    </>
+    <footer>
+      <div className="links">
+        <a href="#">GitHub</a>
+        <a href="#">Contact</a>
+        <a href="#">About us</a>
+        <a href="#">Help</a>
+      </div>
+    </footer>
   );
 }
 
