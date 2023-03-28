@@ -10,12 +10,10 @@ function Categories() {
 
   const clickHandler = (event) => {
     setCategory(event.target.name);
-    console.log(event.target);
   };
 
   const clickHandlerDif = (event) => {
     setDifficulty(event.target.name);
-    console.log(event.target);
   };
 
   useEffect(() => {
@@ -52,84 +50,85 @@ function Categories() {
             <div className="categories">
               <button
                 className="box"
-                onClick={(e) => clickHandler(e)}
                 name="arts_and_literature"
+                onClick={(e) => clickHandler(e)}
                 id="arts"
               >
-                <div className="insideContainer">
-                  ARTS & LITERATURE
-                  <img src="arts.svg" alt="arts icon" id="categoryIcons" />
-                </div>
+                ARTS & LITERATURE
+                <img src="arts.svg" alt="arts icon" id="categoryIcons" name="arts_and_literature" />
               </button>
               <button className="box" onClick={(e) => clickHandler(e)} name="film_and_tv">
-                <div className="insideContainer">
-                  FILM & TV
-                  <img src="film_and_tv.svg" alt="film and tv icon" id="categoryIcons" />
-                </div>
+                FILM & TV
+                <img
+                  src="film_and_tv.svg"
+                  alt="film and tv icon"
+                  name="film_and_tv"
+                  id="categoryIcons"
+                />
               </button>
               <button className="box" onClick={(e) => clickHandler(e)} name="food_and_drink">
-                <div className="insideContainer">
-                  FOOD & DRINK
-                  <img src="food_and_drink.svg" alt="food and drink icon" id="categoryIcons" />
-                </div>
+                FOOD & DRINK
+                <img
+                  src="food_and_drink.svg"
+                  alt="food and drink icon"
+                  id="categoryIcons"
+                  name="food_and_drink"
+                />
               </button>
               <button className="box" onClick={(e) => clickHandler(e)} name="sport_and_leisure">
-                <div className="insideContainer">
-                  SPORTS & LEISURE
-                  <img src="sports.svg" alt="sports and leisure icon" id="categoryIcons" />
-                </div>
+                SPORTS & LEISURE
+                <img
+                  src="sports.svg"
+                  alt="sports and leisure icon"
+                  id="categoryIcons"
+                  name="sport_and_leisure"
+                />
               </button>
               <button className="box" onClick={(e) => clickHandler(e)} name="general_knowledge">
-                <div className="insideContainer">
-                  GENERAL KNOWLEDGE
-                  <img src="general.svg" alt="general knowledge icon" id="generalIcon" />
-                </div>
+                GENERAL KNOWLEDGE
+                <img
+                  src="general.svg"
+                  alt="general knowledge icon"
+                  id="generalIcon"
+                  name="general_knowledge"
+                />
               </button>
               <button className="box" onClick={(e) => clickHandler(e)} name="society_and_culture">
-                <div className="insideContainer">
-                  SOCIETY & CULTURE
-                  <img src="society.svg" alt="society and culture icon" id="societyIcon" />
-                </div>
+                SOCIETY & CULTURE
+                <img
+                  src="society.svg"
+                  alt="society and culture icon"
+                  id="societyIcon"
+                  name="society_and_culture"
+                />
               </button>
               <button className="box" onClick={(e) => clickHandler(e)} name="science">
-                <div className="insideContainer">
-                  SCIENCE
-                  <img src="science.svg" alt="science icon" id="categoryIcons" />
-                </div>
+                SCIENCE
+                <img src="science.svg" alt="science icon" id="categoryIcons" name="science" />
               </button>
               <button className="box" onClick={(e) => clickHandler(e)} name="music">
-                <div className="insideContainer">
-                  MUSIC
-                  <img src="music.svg" alt="music icon" id="categoryIcons" />
-                </div>
+                MUSIC
+                <img src="music.svg" alt="music icon" id="categoryIcons" name="music" />
               </button>
               <button className="box" onClick={(e) => clickHandler(e)} name="history">
-                <div className="insideContainer">
-                  HISTORY
-                  <img src="history.svg" alt="history icon" id="categoryIcons" />
-                </div>
+                HISTORY
+                <img src="history.svg" alt="history icon" id="categoryIcons" name="history" />
               </button>
               <button className="box" onClick={(e) => clickHandler(e)} name="geography">
-                <div className="insideContainer">
-                  GEOGRAPHY
-                  <img src="geography.svg" alt="geography icon" id="categoryIcons" />
-                </div>
+                GEOGRAPHY
+                <img src="geography.svg" alt="geography icon" id="categoryIcons" name="geography" />
               </button>
               <button className="box" onClick={(e) => clickHandler(e)} name="random">
-                <div className="insideContainer">
-                  RANDOM (not working)
-                  <img src="random.svg" alt="random selection icon" id="randomIcon" />
-                </div>
+                RANDOM (not working)
+                <img src="random.svg" alt="random selection icon" id="randomIcon" name="random" />
               </button>
               <button className="box" onClick={(e) => clickHandler(e)} name="mixed">
-                <div className="insideContainer">
-                  MIXED
-                  <img src="mixed.svg" alt="mixed selection icon" id="categoryIcons" />
-                </div>
+                MIXED
+                <img src="mixed.svg" alt="mixed selection icon" id="categoryIcons" name="mixed" />
               </button>
             </div>
             {loading ? (
-              <div class="lds-ring">
+              <div className="lds-ring">
                 <div></div>
                 <div></div>
                 <div></div>

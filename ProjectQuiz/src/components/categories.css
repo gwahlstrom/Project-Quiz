@@ -6,14 +6,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(90deg, #fc466b 0%, #3f5efb 100%);
+  background: rgba(207, 207, 206, 0.537);
 }
 
 .categories-wrapper {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  background-color: rgba(255, 255, 255, 0.175);
   max-width: 900px;
   max-height: 900px;
   gap: 2rem;
@@ -30,13 +29,13 @@ body {
 }
 
 .categories::-webkit-scrollbar {
-  width: 6px; /* width of the entire scrollbar */
+  width: 10px; /* width of the entire scrollbar */
 }
 .categories::-webkit-scrollbar-track {
   background: rgb(204, 204, 204); /* color of the tracking area */
 }
 .categories::-webkit-scrollbar-thumb {
-  background-color: rgb(155, 152, 237); /* color of the scroll thumb */
+  background-color: rgb(244, 134, 134); /* color of the scroll thumb */
   border-radius: 40px; /* roundness of the scroll thumb */
   border: none; /* creates padding around scroll thumb */
 }
@@ -57,7 +56,6 @@ body {
 
 .diff-button {
   display: flex;
-  font-family: Helvetica;
   letter-spacing: 1px;
   text-align: center;
   align-items: center;
@@ -94,6 +92,7 @@ body {
   gap: 0.5rem;
   background-color: rgb(30, 49, 105);
   height: 400px;
+  width: 520px;
   overflow-y: scroll;
   padding: 0.5rem;
 }
@@ -103,7 +102,6 @@ body {
   height: 120px;
   font-size: 14px;
   border-radius: 12px;
-  font-family: Helvetica;
   font-weight: bold;
   margin: 0;
   padding: 5px;
@@ -154,7 +152,6 @@ body {
 
 .backBtn {
   display: flex;
-  font-family: Helvetica;
   font-weight: bold;
   letter-spacing: 1px;
   text-align: center;
@@ -182,7 +179,6 @@ body {
 
 .startBtn {
   display: flex;
-  font-family: Helvetica;
   font-weight: bold;
   letter-spacing: 1px;
   text-align: center;

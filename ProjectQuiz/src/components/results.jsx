@@ -15,19 +15,19 @@ function Results(props) {
       (el) => el === item.correctAnswer
     );
     return (
-      <div className="QandA" key={index}>
+      <div className="resultsQuestion" key={index}>
         <h4>
-          {item.question} -{" "}
-          {props.userAnswers[index] === item.correctAnswer
-            ? "Correct!"
-            : "Wrong answer"}
+          {index + 1} - {item.question} -{" "}
+          {props.userAnswers[index] === item.correctAnswer ? "Correct!" : "Wrong answer"}
         </h4>
 
-        <div className="answers">
+        <div className="resultsAnswer">
           {props.possibleAnswers[index].map((answer, indexAnsw) => {
             return (
               <p
-                className={indexAnsw === indexCorrectAnswer ? "green" : "red"}
+                className={
+                  indexAnsw === indexCorrectAnswer ? "correctAnswerColor" : "incorrectAnswerColor"
+                }
                 key={answer}
               >
                 {answer}
@@ -45,9 +45,10 @@ function Results(props) {
       <h2>
         You had {props.correctAnswer} correct out of {props.amountOfAnswers}!
       </h2>
-      <p>(visa alla frågor och de korrekta/inkorrekta svaren)</p>
-      {results}
-      <Link to="/">Play again</Link>
+      <div className="resultsScrollBox">{results}</div>
+      <Link to="/" className="playAgainBtn">
+        Play again
+      </Link>
     </div>
   );
 }

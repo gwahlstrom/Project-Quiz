@@ -43,18 +43,11 @@ function QuizGame() {
 
   useEffect(() => {
     if (data[count] && count < 10) {
-      const answersArray = [
-        ...data[count].incorrectAnswers,
-        data[count].correctAnswer,
-      ];
+      const answersArray = [...data[count].incorrectAnswers, data[count].correctAnswer];
       answersArray.sort(() => Math.random() - 0.5);
       const answersButton = answersArray.map((answer, index) => {
         return (
-          <button
-            className="answerBtn"
-            onClick={(e) => clickHandler(e)}
-            key={index}
-          >
+          <button className="answerBtn" onClick={(e) => clickHandler(e)} key={index}>
             {answer}
           </button>
         );
@@ -71,19 +64,22 @@ function QuizGame() {
   if (count >= 0 && count < 10) {
     return (
       <div className="question-wrapper">
-
         <div className="main-questions">
-            <div className="imageDiv">
-            <p>Img here</p>
+          <div className="imageDiv">
+            <p>{data[count].category}</p>
           </div>
-        <ProgressBar completed={progress}></ProgressBar>
-        {data[count] ? (
-          <div className="question">
-            <h3>
-              {data[count].question}
-              {data[count].category}
-            </h3>
-          </div>
+
+          {data[count] ? (
+            <>
+              <div className="questionAndProgress">
+                <div className="question">
+                  <h3>{data[count].question}</h3>
+                </div>
+                <div>
+                  <ProgressBar completed={progress}></ProgressBar>
+                </div>
+              </div>
+            </>
           ) : (
             <p>loading...</p>
           )}
@@ -97,13 +93,15 @@ function QuizGame() {
   } else if (count === 10) {
     return (
       <>
-        <Results
-          userAnswers={userAnswers}
-          possibleAnswers={allAnswers}
-          correctAnswer={correct}
-          amountOfAnswers={data.length}
-          fetchedData={data}
-        />
+        <div className="resultsContainer">
+          <Results
+            userAnswers={userAnswers}
+            possibleAnswers={allAnswers}
+            correctAnswer={correct}
+            amountOfAnswers={data.length}
+            fetchedData={data}
+          />
+        </div>
       </>
     );
   }
