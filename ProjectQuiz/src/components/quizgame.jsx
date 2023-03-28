@@ -3,24 +3,43 @@ import Results from "./results";
 import "./quizgame.css";
 import { QuizContext } from "./context";
 import { Link } from "react-router-dom";
+import ProgressBar from "./progressbar";
 
 function QuizGame() {
   const [count, setCount] = useState(0);
   const [answers, setAnswers] = useState(null);
   const [correct, setCorrect] = useState(0);
+  const [userAnswers, setUserAnswers] = useState([]);
+  const [allAnswers, setAllAnswers] = useState(null);
+  const [progress, setProgress] = useState(0); // for progress bar
 
   const { data, setGameStart } = useContext(QuizContext);
 
+  //for progress bar
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setProgress((oldProgress) => {
+        if (oldProgress === 100) {
+          return 0;
+        }
+        return Math.min(oldProgress + 1, 100);
+      });
+    }, 150);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+  ///////////
+
   const clickHandler = (event) => {
     if (data[count].correctAnswer === event.target.innerHTML) {
+      setUserAnswers([...userAnswers, event.target.innerHTML]);
       setCorrect(correct + 1);
     }
+    setUserAnswers([...userAnswers, event.target.innerHTML]);
     setCount(count + 1);
   };
-
-  //   useEffect(() => {
-  //     setGameStart(true);
-  //   }, []);
 
   useEffect(() => {
     if (data[count] && count < 10) {
@@ -40,6 +59,11 @@ function QuizGame() {
           </button>
         );
       });
+      if (allAnswers != null) {
+        setAllAnswers((prev) => [...prev, answersArray]);
+      } else {
+        setAllAnswers([answersArray]);
+      }
       setAnswers(answersButton);
     }
   }, [count, data]);
@@ -47,17 +71,19 @@ function QuizGame() {
   if (count >= 0 && count < 10) {
     return (
       <div className="question-wrapper">
+
         <div className="main-questions">
-          <div className="imageDiv">
+            <div className="imageDiv">
             <p>Img here</p>
           </div>
-          {data[count] ? (
-            <div className="question">
-              <h3>
-                {data[count].question}
-                {/*                 {data[count].category} */}
-              </h3>
-            </div>
+        <ProgressBar completed={progress}></ProgressBar>
+        {data[count] ? (
+          <div className="question">
+            <h3>
+              {data[count].question}
+              {data[count].category}
+            </h3>
+          </div>
           ) : (
             <p>loading...</p>
           )}
@@ -72,6 +98,8 @@ function QuizGame() {
     return (
       <>
         <Results
+          userAnswers={userAnswers}
+          possibleAnswers={allAnswers}
           correctAnswer={correct}
           amountOfAnswers={data.length}
           fetchedData={data}
