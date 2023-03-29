@@ -15,6 +15,7 @@ function QuizGame() {
   const [progress, setProgress] = useState(100); // for progress bar
   const [stopProgress, setStopProgress] = useState(false); // for progress bar
   const [isDeactive, setIsDeactive] = useState(false);
+
   const { pause, reset, running, seconds, start, stop } = useTimer({
     initialSeconds: 0,
     initiallyRunning: true,
@@ -72,9 +73,14 @@ function QuizGame() {
 
   useEffect(() => {
     if (data[count] && count < 10) {
-      const answersArray = [...data[count].incorrectAnswers, data[count].correctAnswer];
+      const answersArray = [
+        ...data[count].incorrectAnswers,
+        data[count].correctAnswer,
+      ];
       answersArray.sort(() => Math.random() - 0.5);
-      indexCorrectAnswer = answersArray.findIndex((el) => el === data[count].correctAnswer);
+      indexCorrectAnswer = answersArray.findIndex(
+        (el) => el === data[count].correctAnswer
+      );
       const answersButton = answersArray.map((answer, index) => {
         return (
           <button

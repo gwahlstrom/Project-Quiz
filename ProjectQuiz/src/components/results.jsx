@@ -1,9 +1,20 @@
 import { Link } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState, useRef } from "react";
 import "./results.css";
 import { QuizContext } from "./context";
+import Confetti from "react-confetti";
 
 function Results(props) {
+
+  const [height, setHeight] = useState(null);
+  const [width, setWidth] = useState(null);
+  const confetiRef = useRef(null);
+
+  useEffect(() => {
+    setHeight(confetiRef.current.clientHeight);
+    setWidth(confetiRef.current.clientWidth);
+  }, []);
+  
   const { data, setGameStart, difficulty } = useContext(QuizContext);
   //Calculating Scores
   let multiplier;
@@ -61,12 +72,18 @@ function Results(props) {
     );
     return (
       <div className="resultsQuestion" key={index}>
-        <h4>
-          {index + 1} - {item.question} -{" "}
-          {props.userAnswers[index] === item.correctAnswer
-            ? "Correct!"
-            : "Wrong answer"}
-        </h4>
+        <div className="wrongOrRightDiv">
+          <h2>
+            {props.userAnswers[index] === item.correctAnswer
+              ? "Correct answer"
+              : "Wrong answer"}
+          </h2>
+        </div>
+        <div className="resultQuestionsDiv">
+          <h4>
+            Question {index + 1}: {item.question}
+          </h4>
+        </div>
 
         <div className="resultsAnswer">
           {props.possibleAnswers[index].map((answer, indexAnsw) => {
@@ -89,15 +106,20 @@ function Results(props) {
   });
 
   return (
-    <div className="results-wrapper">
-      <h1>Results</h1>
-      <h2>
-        You had {props.correctAnswer} correct out of {props.amountOfAnswers}!
-      </h2>
+    <div className="results-wrapper" ref={confetiRef}>
+      <Confetti numberOfPieces={150} width={width} height={height} />
+      <div className="resultsInfo">
+        <h1>Results</h1>
+        <h2>
+          You had {props.correctAnswer} correct out of {props.amountOfAnswers}!
+        </h2>
+      </div>
       <div className="resultsScrollBox">{results}</div>
-      <Link to="/" className="playAgainBtn">
-        Play again
-      </Link>
+      <div className="playAgainDiv">
+        <Link to="/" className="playAgainBtn">
+          Play again
+        </Link>
+      </div>
     </div>
   );
 }

@@ -35,7 +35,14 @@
   height: 700px;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  background: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+  background: linear-gradient(
+    to right top,
+    #051937,
+    #004d7a,
+    #008793,
+    #00bf72,
+    #a8eb12
+  );
 }
 
 .question {
@@ -139,9 +146,11 @@
 }
 
 .resultsContainer {
-  background-color: lightblue;
+  background: rgba(207, 207, 206, 0.537);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 900px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
