@@ -8,6 +8,7 @@ export const Context = ({ children }) => {
   const [category, setCategory] = useState("");
   const [difficulty, setDifficulty] = useState("");
   const [loading, setLoading] = useState(false);
+  // const [timer, setTimer] = useState(0);
 
   // https://the-trivia-api.com/api/questions?categories=arts_and_literature&limit=10&difficulty=easy
 
@@ -40,7 +41,15 @@ export const Context = ({ children }) => {
     }
   }, [gameStart]);
 
-  const values = { setGameStart, setDifficulty, data, setCategory, category, difficulty, loading };
+  const values = {
+    setGameStart,
+    setDifficulty,
+    data,
+    setCategory,
+    category,
+    difficulty,
+    loading,
+  };
 
   return <QuizContext.Provider value={values}>{children}</QuizContext.Provider>;
 };
