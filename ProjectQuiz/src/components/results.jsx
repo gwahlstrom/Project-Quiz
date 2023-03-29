@@ -4,10 +4,55 @@ import "./results.css";
 import { QuizContext } from "./context";
 
 function Results(props) {
-  const { data, setGameStart, setTimer } = useContext(QuizContext);
+  const { data, setGameStart, difficulty } = useContext(QuizContext);
+  //Calculating Scores
+  let multiplier;
+  if (difficulty === "easy") {
+    multiplier = 1;
+  } else if (difficulty === "medium") {
+    multiplier = 2;
+  } else if (difficulty === "hard") {
+    multiplier = 3;
+  }
+  const score = multiplier * props.correctAnswer;
+
+  //Create cookies to store highScores
+  const NO_OF_HIGH_SCORES = 10;
+  const HIGH_SCORES = "highScores";
+  const highScoreString = localStorage.getItem(HIGH_SCORES);
+  const highScores = JSON.parse(highScoreString) ?? [];
+  const lowestScore = highScores[NO_OF_HIGH_SCORES - 1]?.score ?? 0;
+
+  function checkHighScore(score) {
+    const highScores = JSON.parse(localStorage.getItem(HIGH_SCORES)) ?? [];
+    const lowestScore = highScores[NO_OF_HIGH_SCORES - 1]?.score ?? 0;
+
+    if (score > lowestScore) {
+      saveHighScore(score, highScores); // TODO
+      // showHighScores(); // TODO
+    }
+  }
+
+  function saveHighScore(score, highScores) {
+    const name = prompt("You got a highscore! Enter name:");
+    const newScore = { score, name };
+
+    // 1. Add to list
+    highScores.push(newScore);
+
+    // 2. Sort the list
+    highScores.sort((a, b) => b.score - a.score);
+
+    // 3. Select new list
+    highScores.splice(NO_OF_HIGH_SCORES);
+
+    // 4. Save to local storage
+    localStorage.setItem(HIGH_SCORES, JSON.stringify(highScores));
+  }
 
   useEffect(() => {
     setGameStart(false);
+    checkHighScore(score);
   }, []);
 
   const results = data.map((item, index) => {
