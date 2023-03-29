@@ -20,7 +20,14 @@
   height: 600px;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  background: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+  background: linear-gradient(
+    to right top,
+    #051937,
+    #004d7a,
+    #008793,
+    #00bf72,
+    #a8eb12
+  );
 }
 
 .start {
@@ -56,6 +63,7 @@ input::placeholder {
 
 .highscore {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-content: center;
   width: 230px;
