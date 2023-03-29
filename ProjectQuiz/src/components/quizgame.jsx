@@ -20,7 +20,7 @@ function QuizGame() {
     initialSeconds: 0,
     initiallyRunning: true,
   });
-  const { data, gameStart, setGameStart } = useContext(QuizContext);
+  const { data, gameStart, setGameStart, category } = useContext(QuizContext);
 
   let indexCorrectAnswer;
   //for progress bar
@@ -50,9 +50,9 @@ function QuizGame() {
     if (data[count].correctAnswer === event.target.innerHTML) {
       setUserAnswers([...userAnswers, event.target.innerHTML]);
       setCorrect(correct + 1);
-      buttonId.style.backgroundColor = "green";
+      buttonId.style.backgroundColor = "rgb(112, 206, 112)";
     } else if (data[count].correctAnswer !== event.target.innerHTML) {
-      buttonId.style.backgroundColor = "red";
+      buttonId.style.backgroundColor = "rgb(238, 86, 86)";
     }
     setUserAnswers([...userAnswers, event.target.innerHTML]);
 
@@ -108,19 +108,35 @@ function QuizGame() {
       <div className="question-wrapper">
         <div className="main-questions">
           <div className="topperContainer">
-            <div className="currentQuestion">
-              <h3>{count + 1}/10</h3>
+            <div className="imageDiv">
+              <img src={category + ".svg"} />
+            </div>
+            <div className="gameTitleDiv">
+              <h1>The Quiz Game</h1>
             </div>
             <div className="imageDiv">
-              <p>{data[count].category}</p>
+              <img src={category + ".svg"} />
             </div>
           </div>
 
           {data[count] ? (
             <>
               <div className="questionAndProgress">
-                <div className="question">
-                  <h3>{data[count].question}</h3>
+                <div className="topicContainer">
+                  <div className="topicRowContainer">
+                    <div className="leftSideTopic">
+                      <h4 id="questionId">Question {count + 1}</h4>
+                    </div>
+                    <div className="topic">
+                      <h2>{data[count].category.toUpperCase()}</h2>
+                    </div>
+                    <div className="rightSideTopic">
+                      <h4>{data[count].difficulty}</h4>
+                    </div>
+                  </div>
+                  <div className="question">
+                    <h3>{data[count].question}</h3>
+                  </div>
                 </div>
                 <div>
                   <ProgressBar completed={progress}></ProgressBar>

@@ -5,8 +5,13 @@ body {
 .container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   background: rgba(207, 207, 206, 0.537);
+}
+
+.categoryHeadTitle {
+  padding: 2rem;
 }
 
 .categories-wrapper {
@@ -14,9 +19,9 @@ body {
   justify-content: center;
   align-items: flex-start;
   max-width: 900px;
-  max-height: 900px;
+  height: 500px;
   gap: 2rem;
-  padding: 5rem;
+  padding: 0rem 5rem 0rem 5rem;
   margin: 1.5rem;
 }
 
@@ -98,6 +103,10 @@ body {
 }
 
 .box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 160px;
   height: 120px;
   font-size: 14px;
@@ -215,20 +224,19 @@ body {
 .lds-ring {
   display: inline-block;
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
 }
 .lds-ring div {
   box-sizing: border-box;
   display: block;
   position: absolute;
-  width: 64px;
-  height: 64px;
-  margin: 8px;
-  border: 8px solid #fff;
+  width: 32px;
+  height: 32px;
+  border: 8px solid rgb(30, 49, 105);
   border-radius: 50%;
   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #fff transparent transparent transparent;
+  border-color: rgb(30, 49, 105) transparent transparent transparent;
 }
 .lds-ring div:nth-child(1) {
   animation-delay: -0.45s;

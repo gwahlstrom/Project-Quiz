@@ -4,10 +4,10 @@ function Footer() {
   return (
     <footer>
       <div className="links">
-        <a href="#">GitHub</a>
-        <a href="#">Contact</a>
-        <a href="#">About us</a>
-        <a href="#">Help</a>
+        <button className="footerButtons">GitHub</button>
+        <button className="footerButtons">Contact</button>
+        <button className="footerButtons">About Us</button>
+        <button className="footerButtons">Help</button>
       </div>
     </footer>
   );

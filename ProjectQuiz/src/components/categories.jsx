@@ -25,6 +25,8 @@ function Categories() {
   return (
     <>
       <div className="container">
+        <h1 className="categoryHeadTitle">The Quiz Game</h1>
+        <h3 className="categoryInstructions">Choose a difficulty and a category:</h3>
         <div className="categories-wrapper">
           <div className="difficulty">
             <Link to="/" className="backBtn">
@@ -55,7 +57,12 @@ function Categories() {
                 id="arts"
               >
                 ARTS & LITERATURE
-                <img src="arts.svg" alt="arts icon" id="categoryIcons" name="arts_and_literature" />
+                <img
+                  src="arts_and_literature.svg"
+                  alt="arts icon"
+                  id="categoryIcons"
+                  name="arts_and_literature"
+                />
               </button>
               <button className="box" onClick={(e) => clickHandler(e)} name="film_and_tv">
                 FILM & TV
@@ -78,7 +85,7 @@ function Categories() {
               <button className="box" onClick={(e) => clickHandler(e)} name="sport_and_leisure">
                 SPORTS & LEISURE
                 <img
-                  src="sports.svg"
+                  src="sport_and_leisure.svg"
                   alt="sports and leisure icon"
                   id="categoryIcons"
                   name="sport_and_leisure"
@@ -87,7 +94,7 @@ function Categories() {
               <button className="box" onClick={(e) => clickHandler(e)} name="general_knowledge">
                 GENERAL KNOWLEDGE
                 <img
-                  src="general.svg"
+                  src="general_knowledge.svg"
                   alt="general knowledge icon"
                   id="generalIcon"
                   name="general_knowledge"
@@ -96,7 +103,7 @@ function Categories() {
               <button className="box" onClick={(e) => clickHandler(e)} name="society_and_culture">
                 SOCIETY & CULTURE
                 <img
-                  src="society.svg"
+                  src="society_and_culture.svg"
                   alt="society and culture icon"
                   id="societyIcon"
                   name="society_and_culture"
