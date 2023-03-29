@@ -4,7 +4,7 @@ import "./results.css";
 import { QuizContext } from "./context";
 
 function Results(props) {
-  const { data, setGameStart } = useContext(QuizContext);
+  const { data, setGameStart, setTimer } = useContext(QuizContext);
 
   useEffect(() => {
     setGameStart(false);
@@ -18,7 +18,9 @@ function Results(props) {
       <div className="resultsQuestion" key={index}>
         <h4>
           {index + 1} - {item.question} -{" "}
-          {props.userAnswers[index] === item.correctAnswer ? "Correct!" : "Wrong answer"}
+          {props.userAnswers[index] === item.correctAnswer
+            ? "Correct!"
+            : "Wrong answer"}
         </h4>
 
         <div className="resultsAnswer">
@@ -26,7 +28,9 @@ function Results(props) {
             return (
               <p
                 className={
-                  indexAnsw === indexCorrectAnswer ? "correctAnswerColor" : "incorrectAnswerColor"
+                  indexAnsw === indexCorrectAnswer
+                    ? "correctAnswerColor"
+                    : "incorrectAnswerColor"
                 }
                 key={answer}
               >
