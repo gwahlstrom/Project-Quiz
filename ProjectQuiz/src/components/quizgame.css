@@ -67,6 +67,7 @@
   padding: 1rem;
   gap: 1rem;
   width: 900px;
+
   height: 650px;
   background: rgba(207, 207, 206, 0.537);
 }
@@ -131,6 +132,7 @@
 .topic > h2 {
   font-size: 18px;
   letter-spacing: 2px;
+
 }
 
 .question {
@@ -230,9 +232,11 @@
 }
 
 .resultsContainer {
-  background-color: lightblue;
+  background: rgba(207, 207, 206, 0.537);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 900px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }

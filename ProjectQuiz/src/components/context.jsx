@@ -8,7 +8,12 @@ export const Context = ({ children }) => {
   const [category, setCategory] = useState("");
   const [difficulty, setDifficulty] = useState("");
   const [loading, setLoading] = useState(false);
-  // const [timer, setTimer] = useState(0);
+
+  //Local storage high-scores
+  const NO_OF_HIGH_SCORES = 10;
+  const HIGH_SCORES = "highScores";
+  const highScoreString = localStorage.getItem(HIGH_SCORES);
+  const highScores = JSON.parse(highScoreString) ?? [];
 
   // https://the-trivia-api.com/api/questions?categories=arts_and_literature&limit=10&difficulty=easy
 
@@ -48,6 +53,10 @@ export const Context = ({ children }) => {
     category,
     difficulty,
     loading,
+    NO_OF_HIGH_SCORES,
+    HIGH_SCORES,
+    highScoreString,
+    highScores,
   };
 
   return <QuizContext.Provider value={values}>{children}</QuizContext.Provider>;
