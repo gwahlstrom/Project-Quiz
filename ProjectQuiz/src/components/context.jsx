@@ -21,7 +21,6 @@ export const Context = ({ children }) => {
       url = "https://the-trivia-api.com/api/questions?limit=10";
       setGameStart(true);
     }
-    console.log(url);
     return url;
   };
 
