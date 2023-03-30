@@ -1,21 +1,34 @@
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { QuizContext } from "./context";
 import "./start.css";
 
 function Start() {
-  const { NO_OF_HIGH_SCORES, HIGH_SCORES, highScoreString, highScores } = useContext(QuizContext);
+  const {
+    NO_OF_HIGH_SCORES,
+    HIGH_SCORES,
+    highScoreString,
+    highScores,
+    nickName,
+    setNickName,
+  } = useContext(QuizContext);
+
+  const [inputField, setInputField] = useState("");
 
   function showHighScores() {
-    const highScores = JSON.parse(localStorage.getItem(HIGH_SCORES)) ?? [];
-    const highScoreList = document.getElementsByClassName("highscore");
-    return (highScoreList.innerHTML = highScores.map((score, index) => {
+    return highScores.map((score, index) => {
       return (
         <li key={index}>
           {score.name} -{score.score} points
         </li>
       );
-    }));
+    });
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    console.log(nickName);
+    setInputField("");
   }
 
   return (
@@ -24,7 +37,19 @@ function Start() {
         <h1>The Quiz Game</h1>
         <div className="startHighscoreWrapper">
           <div className="start">
-            <input type="text" placeholder="Enter your nickname.." />
+            <form onSubmit={handleSubmit}>
+              <input
+                type="text"
+                name="nickname"
+                value={inputField}
+                onChange={(event) => {
+                  setInputField(event.target.value);
+                  setNickName(event.target.value);
+                }}
+                placeholder="Enter your nickname.."
+              />
+              <button type="submit">Join</button>
+            </form>
             <Link to="/categories">FREE PLAY</Link>
             <a href="#">DAILY CHALLENGE</a>
           </div>

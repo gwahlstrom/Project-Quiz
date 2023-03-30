@@ -8,7 +8,7 @@ export const Context = ({ children }) => {
   const [category, setCategory] = useState("");
   const [difficulty, setDifficulty] = useState("");
   const [loading, setLoading] = useState(false);
-
+  const [nickName, setNickName] = useState("");
   //Local storage high-scores
   const NO_OF_HIGH_SCORES = 10;
   const HIGH_SCORES = "highScores";
@@ -57,6 +57,8 @@ export const Context = ({ children }) => {
     HIGH_SCORES,
     highScoreString,
     highScores,
+    nickName,
+    setNickName,
   };
 
   return <QuizContext.Provider value={values}>{children}</QuizContext.Provider>;
