@@ -5,6 +5,7 @@ import { QuizContext } from "./context";
 import { Link } from "react-router-dom";
 import ProgressBar from "./progressbar";
 import { useTimer } from "../Hooks/usetimer";
+import GameBackgroundMusic from "./gameMusic";
 
 function QuizGame() {
   const [count, setCount] = useState(0);
@@ -105,55 +106,58 @@ function QuizGame() {
 
   if (!stopProgress && count >= 0 && count < 10) {
     return (
-      <div className="question-wrapper">
-        <div className="main-questions">
-          <div className="topperContainer">
-            <div className="imageDiv">
-              <img src={category + ".svg"} />
-            </div>
-            <div className="gameTitleDiv">
-              <h1>The Quiz Game</h1>
-            </div>
-            <div className="imageDiv">
-              <img src={category + ".svg"} />
-            </div>
-          </div>
-
-          {data[count] ? (
-            <>
-              <div className="questionAndProgress">
-                <div className="topicContainer">
-                  <div className="topicRowContainer">
-                    <div className="leftSideTopic">
-                      <h4 id="questionId">Question {count + 1}</h4>
-                    </div>
-                    <div className="topic">
-                      <h2>{data[count].category.toUpperCase()}</h2>
-                    </div>
-                    <div className="rightSideTopic">
-                      <h4>{data[count].difficulty}</h4>
-                    </div>
-                  </div>
-                  <div className="question">
-                    <h3>{data[count].question}</h3>
-                  </div>
-                </div>
-                <div>
-                  <ProgressBar completed={progress}></ProgressBar>
-                </div>
+      <>
+        <GameBackgroundMusic />
+        <div className="question-wrapper">
+          <div className="main-questions">
+            <div className="topperContainer">
+              <div className="imageDiv">
+                <img src={category + ".svg"} />
               </div>
-            </>
-          ) : (
-            <p>loading...</p>
-          )}
-          <div className="answersdiv">{answers}</div>
-          <div className="cancel">
-            <Link to="/" className="cancelBtn">
-              Cancel
-            </Link>
+              <div className="gameTitleDiv">
+                <h1>The Quiz Game</h1>
+              </div>
+              <div className="imageDiv">
+                <img src={category + ".svg"} />
+              </div>
+            </div>
+
+            {data[count] ? (
+              <>
+                <div className="questionAndProgress">
+                  <div className="topicContainer">
+                    <div className="topicRowContainer">
+                      <div className="leftSideTopic">
+                        <h4 id="questionId">Question {count + 1}</h4>
+                      </div>
+                      <div className="topic">
+                        <h2>{data[count].category.toUpperCase()}</h2>
+                      </div>
+                      <div className="rightSideTopic">
+                        <h4>{data[count].difficulty}</h4>
+                      </div>
+                    </div>
+                    <div className="question">
+                      <h3>{data[count].question}</h3>
+                    </div>
+                  </div>
+                  <div>
+                    <ProgressBar completed={progress}></ProgressBar>
+                  </div>
+                </div>
+              </>
+            ) : (
+              <p>loading...</p>
+            )}
+            <div className="answersdiv">{answers}</div>
+            <div className="cancel">
+              <Link to="/" className="cancelBtn">
+                Cancel
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
+      </>
     );
   } else if (stopProgress) {
     return (

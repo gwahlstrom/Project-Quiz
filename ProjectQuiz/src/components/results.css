@@ -13,14 +13,16 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 .resultsScrollBox {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 15px;
-  width: 740px;
-  height: 400px;
+  background-color: rgb(255, 192, 230, 0.4);
+  width: 850px;
+  height: 420px;
   overflow-y: scroll;
   /*   border-left: 3px solid rgb(155, 152, 237); */
   border: 1.5px solid black;
@@ -41,40 +43,37 @@
 
 .incorrectAnswerColor {
   display: flex;
-  font-family: Helvetica;
-  font-weight: bold;
   letter-spacing: 1px;
   text-align: center;
   align-items: center;
   justify-content: center;
-  gap: 30px;
-  background-color: red;
-  text-decoration: none;
+  background-color: rgb(238, 86, 86);
   color: rgb(16, 9, 86);
   border-radius: 8px;
-  width: 120px;
-  height: 30px;
+  width: auto;
+  width: 350px;
+  height: 70px;
   padding: 10px;
+  font-size: 16px;
   box-shadow: 5px 5px 0px 0px;
 }
 
 .correctAnswerColor {
   display: flex;
-  font-family: Helvetica;
   font-weight: bold;
   letter-spacing: 1px;
   text-align: center;
   align-items: center;
   justify-content: center;
-  gap: 30px;
-  background-color: green;
+  background-color: rgb(95, 188, 114);
   text-decoration: none;
   color: rgb(16, 9, 86);
   border-radius: 8px;
-  width: 120px;
-  height: 30px;
+  width: 350px;
+  height: 70px;
   padding: 10px;
   box-shadow: 5px 5px 0px 0px;
+  font-size: 0.9rem;
   transition: all 0.2s ease-in-out;
   animation: pulseButton 3s infinite ease-in-out;
 }
@@ -98,7 +97,7 @@
   padding: 0.5rem;
   text-align: center;
   border-radius: 5px;
-  width: 650px;
+  width: 760px;
 }
 
 .wrongOrRightDiv {
@@ -107,11 +106,12 @@
 }
 
 .resultsAnswer {
-  width: 470px;
+  width: 800px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
   padding: 15px;
+  align-items: center;
   justify-items: center;
   margin-top: 0.5rem;
 }

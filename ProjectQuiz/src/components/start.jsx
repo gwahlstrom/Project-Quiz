@@ -22,7 +22,6 @@ function Start() {
   return (
     <div className="start-wrapper">
       <div className="main">
-      
         <h1>The Quiz Game</h1>
         <div className="startHighscoreWrapper">
           <div className="start">
@@ -34,7 +33,6 @@ function Start() {
             <p>Highscore</p>
             <ol>{showHighScores()}</ol>
           </div>
-
         </div>
       </div>
     </div>

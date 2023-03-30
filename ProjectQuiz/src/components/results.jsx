@@ -5,7 +5,6 @@ import { QuizContext } from "./context";
 import Confetti from "react-confetti";
 
 function Results(props) {
-
   const [height, setHeight] = useState(null);
   const [width, setWidth] = useState(null);
   const confetiRef = useRef(null);
@@ -14,7 +13,7 @@ function Results(props) {
     setHeight(confetiRef.current.clientHeight);
     setWidth(confetiRef.current.clientWidth);
   }, []);
-  
+
   const { data, setGameStart, difficulty } = useContext(QuizContext);
   //Calculating Scores
   let multiplier;
