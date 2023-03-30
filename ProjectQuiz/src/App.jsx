@@ -1,10 +1,10 @@
-import { useState } from "react";
 import "./App.css";
+import { Routes, Route } from "react-router-dom";
 import Footer from "./components/footer";
 import QuizGame from "./components/quizgame";
 import Start from "./components/start";
-import { Routes, Route } from "react-router-dom";
 import Categories from "./components/categories";
+import NotFound from "./components/404";
 
 function App() {
   return (
@@ -13,6 +13,7 @@ function App() {
         <Route path="/" element={<Start />} />
         <Route path="/categories" element={<Categories />} />
         <Route path="/quizgame" element={<QuizGame />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </div>

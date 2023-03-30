@@ -22,6 +22,7 @@ function Results(props) {
     HIGH_SCORES,
     nickName,
   } = useContext(QuizContext);
+
   //Calculating Scores
   let multiplier;
   if (difficulty === "easy") {
