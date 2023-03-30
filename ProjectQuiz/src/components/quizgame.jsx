@@ -8,11 +8,11 @@ import { useTimer } from "../Hooks/usetimer";
 import GameBackgroundMusic from "./gameMusic";
 
 function QuizGame() {
-  const [count, setCount] = useState(0);
-  const [answers, setAnswers] = useState(null);
-  const [correct, setCorrect] = useState(0);
-  const [userAnswers, setUserAnswers] = useState([]);
-  const [allAnswers, setAllAnswers] = useState(null);
+  const [count, setCount] = useState(0); //saves the question number
+  const [answers, setAnswers] = useState(null); //save the current answers
+  const [correct, setCorrect] = useState(0); //counts the number of correct/wrong
+  const [userAnswers, setUserAnswers] = useState([]); //for results page - show correct/wrong
+  const [allAnswers, setAllAnswers] = useState(null); //save all answers (An array of arrays) for results page
   const [progress, setProgress] = useState(100); // for progress bar
   const [stopProgress, setStopProgress] = useState(false); // for progress bar
   const [isDeactive, setIsDeactive] = useState(false);
@@ -47,9 +47,12 @@ function QuizGame() {
   }, [seconds]);
 
   const clickHandler = (event) => {
-    console.log(event.target.innerHTML);
     const buttonId = document.getElementById(event.target.id);
-    if (data[count].correctAnswer === event.target.innerHTML) {
+    //setIsDeactive(true); //
+    if (
+      data[count].correctAnswer === event.target.innerHTML ||
+      data[count].correctAnswer.trim() + "&nbsp;" === event.target.innerHTML
+    ) {
       setUserAnswers([...userAnswers, event.target.innerHTML]);
       setCorrect(correct + 1);
       buttonId.style.backgroundColor = "rgb(112, 206, 112)";
@@ -64,6 +67,7 @@ function QuizGame() {
       setProgress(100);
       start();
       buttonId.style.backgroundColor = "white";
+      // setIsDeactive(false); //
     }, 3000);
   };
 
