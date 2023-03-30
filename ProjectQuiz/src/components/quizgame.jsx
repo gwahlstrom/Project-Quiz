@@ -47,6 +47,7 @@ function QuizGame() {
   }, [seconds]);
 
   const clickHandler = (event) => {
+    console.log(event.target.innerHTML);
     const buttonId = document.getElementById(event.target.id);
     if (data[count].correctAnswer === event.target.innerHTML) {
       setUserAnswers([...userAnswers, event.target.innerHTML]);
