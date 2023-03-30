@@ -4,8 +4,7 @@ import { QuizContext } from "./context";
 import "./start.css";
 
 function Start() {
-  const { NO_OF_HIGH_SCORES, HIGH_SCORES, highScoreString, highScores } =
-    useContext(QuizContext);
+  const { NO_OF_HIGH_SCORES, HIGH_SCORES, highScoreString, highScores } = useContext(QuizContext);
 
   function showHighScores() {
     const highScores = JSON.parse(localStorage.getItem(HIGH_SCORES)) ?? [];
@@ -22,7 +21,6 @@ function Start() {
   return (
     <div className="start-wrapper">
       <div className="main">
-      
         <h1>The Quiz Game</h1>
         <div className="startHighscoreWrapper">
           <div className="start">
@@ -34,7 +32,6 @@ function Start() {
             <p>Highscore</p>
             <ol>{showHighScores()}</ol>
           </div>
-
         </div>
       </div>
     </div>
