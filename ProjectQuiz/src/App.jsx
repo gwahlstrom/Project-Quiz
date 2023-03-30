@@ -5,10 +5,21 @@ import QuizGame from "./components/quizgame";
 import Start from "./components/start";
 import Categories from "./components/categories";
 import NotFound from "./components/404";
+import { useEffect, useState } from "react";
+import Intro from "./components/intro";
 
 function App() {
+  const [introActive, setIntroActive] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIntroActive(true);
+    }, 3000);
+  }, []);
+
   return (
     <div className="wrapper">
+      {!introActive ? <Intro /> : null}
       <Routes>
         <Route path="/" element={<Start />} />
         <Route path="/categories" element={<Categories />} />

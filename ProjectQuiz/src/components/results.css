@@ -141,6 +141,16 @@
   animation: pulseButton 3s infinite ease-in-out;
 }
 
+.playAgainBtn:visited {
+  text-decoration: none;
+  color: rgb(7, 4, 43);
+}
+
+.playAgainBtn:link {
+  text-decoration: none;
+  color: rgb(7, 4, 43);
+}
+
 #play {
   scale: 1.5;
 }
