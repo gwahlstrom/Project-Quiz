@@ -14,8 +14,14 @@ function Results(props) {
     setWidth(confetiRef.current.clientWidth);
   }, []);
 
-  const { data, setGameStart, difficulty, NO_OF_HIGH_SCORES, HIGH_SCORES, nickName } =
-    useContext(QuizContext);
+  const {
+    data,
+    setGameStart,
+    difficulty,
+    NO_OF_HIGH_SCORES,
+    HIGH_SCORES,
+    nickName,
+  } = useContext(QuizContext);
 
   //Calculating Scores
   let multiplier;
@@ -60,7 +66,9 @@ function Results(props) {
       <div className="resultsQuestion" key={index}>
         <div className="wrongOrRightDiv">
           <h2>
-            {props.userAnswers[index] === item.correctAnswer ? "Correct answer" : "Wrong answer"}
+            {props.userAnswers[index] === item.correctAnswer
+              ? "Correct answer"
+              : "Wrong answer"}
           </h2>
         </div>
         <div className="resultQuestionsDiv">
@@ -74,7 +82,9 @@ function Results(props) {
             return (
               <p
                 className={
-                  indexAnsw === indexCorrectAnswer ? "correctAnswerColor" : "incorrectAnswerColor"
+                  indexAnsw === indexCorrectAnswer
+                    ? "correctAnswerColor"
+                    : "incorrectAnswerColor"
                 }
                 key={answer}
               >

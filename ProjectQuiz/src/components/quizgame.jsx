@@ -5,7 +5,6 @@ import { QuizContext } from "./context";
 import { Link } from "react-router-dom";
 import ProgressBar from "./progressbar";
 import { useTimer } from "../Hooks/usetimer";
-import GameBackgroundMusic from "./gameMusic";
 import Cancel from "./Modals/Cancel";
 
 function QuizGame() {
@@ -133,7 +132,6 @@ function QuizGame() {
   if (!stopProgress && count >= 0 && count < 10) {
     return (
       <>
-        <GameBackgroundMusic />
         <div className="question-wrapper">
           <div className="main-questions">
             <div className="topperContainer">
