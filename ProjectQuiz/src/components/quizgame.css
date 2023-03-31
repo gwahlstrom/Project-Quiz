@@ -132,7 +132,6 @@
 .topic > h2 {
   font-size: 18px;
   letter-spacing: 2px;
-
 }
 
 .question {
@@ -156,6 +155,7 @@
   text-align: center;
   align-items: center;
   justify-content: center;
+  border: none;
   gap: 30px;
   background-color: rgb(255, 255, 255);
   text-decoration: none;
@@ -163,12 +163,12 @@
   border-radius: 8px;
   width: 100px;
   padding: 10px;
-  padding-right: 30px;
   box-shadow: 5px 5px 0px 0px;
   transition: all 0.2s ease-in-out;
 }
 
 .cancelBtn:hover {
+  cursor: pointer;
   scale: 1.03;
 }
 
