@@ -16,6 +16,7 @@ function QuizGame() {
   const [progress, setProgress] = useState(100); // for progress bar
   const [stopProgress, setStopProgress] = useState(false); // for progress bar
   const [isDeactive, setIsDeactive] = useState(false);
+  const [copyAnswers, setCopyAnswers] = useState(null); //a copy of the array that maps the buttons
 
   const { pause, reset, running, seconds, start, stop } = useTimer({
     initialSeconds: 0,
@@ -48,7 +49,7 @@ function QuizGame() {
 
   const clickHandler = (event) => {
     const buttonId = document.getElementById(event.target.id);
-    //setIsDeactive(true); //
+    setIsDeactive(true); //
     if (
       data[count].correctAnswer === event.target.innerHTML ||
       data[count].correctAnswer.trim() + "&nbsp;" === event.target.innerHTML
@@ -67,7 +68,7 @@ function QuizGame() {
       setProgress(100);
       start();
       buttonId.style.backgroundColor = "white";
-      // setIsDeactive(false); //
+      setIsDeactive(false); //
     }, 3000);
   };
 
@@ -79,33 +80,52 @@ function QuizGame() {
 
   useEffect(() => {
     if (data[count] && count < 10) {
-      const answersArray = [
-        ...data[count].incorrectAnswers,
-        data[count].correctAnswer,
-      ];
-      answersArray.sort(() => Math.random() - 0.5);
-      indexCorrectAnswer = answersArray.findIndex(
-        (el) => el === data[count].correctAnswer
-      );
-      const answersButton = answersArray.map((answer, index) => {
-        return (
-          <button
-            className="answerBtn"
-            onClick={(e) => clickHandler(e)}
-            key={index}
-            id={index}
-            disabled={isDeactive}
-          >
-            {answer}
-          </button>
+      //
+      if (isDeactive === false) {
+        const answersArray = [
+          ...data[count].incorrectAnswers,
+          data[count].correctAnswer,
+        ];
+        answersArray.sort(() => Math.random() - 0.5);
+        setCopyAnswers(answersArray);
+        indexCorrectAnswer = answersArray.findIndex(
+          (el) => el === data[count].correctAnswer
         );
-      });
-      if (allAnswers != null) {
-        setAllAnswers((prev) => [...prev, answersArray]);
-      } else {
-        setAllAnswers([answersArray]);
+        const answersButton = answersArray.map((answer, index) => {
+          return (
+            <button
+              className="answerBtn"
+              onClick={(e) => clickHandler(e)}
+              key={index}
+              id={index}
+              disabled={isDeactive}
+            >
+              {answer}
+            </button>
+          );
+        });
+        if (allAnswers != null) {
+          setAllAnswers((prev) => [...prev, answersArray]);
+        } else {
+          setAllAnswers([answersArray]);
+        }
+        setAnswers(answersButton);
+      } else if (isDeactive === true) {
+        const answersButton = copyAnswers.map((answer, index) => {
+          return (
+            <button
+              className="answerBtn"
+              onClick={(e) => clickHandler(e)}
+              key={index}
+              id={index}
+              disabled={isDeactive}
+            >
+              {answer}
+            </button>
+          );
+        });
+        setAnswers(answersButton);
       }
-      setAnswers(answersButton);
     }
   }, [count, data, isDeactive]);
 
