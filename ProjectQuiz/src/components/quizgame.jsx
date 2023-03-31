@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import ProgressBar from "./progressbar";
 import { useTimer } from "../Hooks/usetimer";
 import GameBackgroundMusic from "./gameMusic";
+import Cancel from "./Modals/Cancel";
 
 function QuizGame() {
   const [count, setCount] = useState(0); //saves the question number
@@ -17,6 +18,7 @@ function QuizGame() {
   const [stopProgress, setStopProgress] = useState(false); // for progress bar
   const [isDeactive, setIsDeactive] = useState(false);
   const [copyAnswers, setCopyAnswers] = useState(null); //a copy of the array that maps the buttons
+  const [showModalCancel, setShowModalCancel] = useState(false);
 
   const { pause, reset, running, seconds, start, stop } = useTimer({
     initialSeconds: 0,
@@ -78,19 +80,18 @@ function QuizGame() {
     }
   }, [count]);
 
+  const openModalCancel = () => {
+    setShowModalCancel(true);
+  };
+
   useEffect(() => {
     if (data[count] && count < 10) {
       //
       if (isDeactive === false) {
-        const answersArray = [
-          ...data[count].incorrectAnswers,
-          data[count].correctAnswer,
-        ];
+        const answersArray = [...data[count].incorrectAnswers, data[count].correctAnswer];
         answersArray.sort(() => Math.random() - 0.5);
         setCopyAnswers(answersArray);
-        indexCorrectAnswer = answersArray.findIndex(
-          (el) => el === data[count].correctAnswer
-        );
+        indexCorrectAnswer = answersArray.findIndex((el) => el === data[count].correctAnswer);
         const answersButton = answersArray.map((answer, index) => {
           return (
             <button
@@ -176,9 +177,10 @@ function QuizGame() {
             )}
             <div className="answersdiv">{answers}</div>
             <div className="cancel">
-              <Link to="/" className="cancelBtn">
-                Cancel
-              </Link>
+              <button className="cancelBtn" onClick={openModalCancel} id="cancelBtn">
+                CANCEL
+              </button>
+              {showModalCancel ? <Cancel setShowModal={setShowModalCancel} /> : null}
             </div>
           </div>
         </div>

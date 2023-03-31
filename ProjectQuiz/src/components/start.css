@@ -12,9 +12,9 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  gap: 7rem;
+  gap: 2rem;
   padding: 2rem;
   width: 800px;
   height: 600px;
@@ -113,6 +113,10 @@ input::placeholder {
   display: flex;
   justify-content: center;
   transition: all 1s ease-in-out;
+}
+
+.logotypeStart {
+  width: 300px;
 }
 
 .highscore {
