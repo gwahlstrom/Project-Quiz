@@ -2,7 +2,6 @@ import { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./categories.css";
 import { QuizContext } from "./context";
-import CatBackgroundMusic from "./categoriesMusic";
 
 function Categories() {
   const quizContext = useContext(QuizContext);
@@ -31,7 +30,6 @@ function Categories() {
 
   return (
     <>
-      <CatBackgroundMusic />
       <div className="container">
         <h1 className="categoryHeadTitle">The Quiz Game</h1>
         <h3 className="categoryInstructions">
