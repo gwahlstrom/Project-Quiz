@@ -21,6 +21,9 @@ function Results(props) {
     NO_OF_HIGH_SCORES,
     HIGH_SCORES,
     nickName,
+    dailyData,
+    isDailyChallenge,
+
   } = useContext(QuizContext);
 
   //Calculating Scores
@@ -58,7 +61,7 @@ function Results(props) {
     checkHighScore(score);
   }, []);
 
-  const results = data.map((item, index) => {
+  const results = (isDailyChallenge ? dailyData : data).map((item, index) => {
     const indexCorrectAnswer = props.possibleAnswers[index].findIndex(
       (el) => el === item.correctAnswer
     );

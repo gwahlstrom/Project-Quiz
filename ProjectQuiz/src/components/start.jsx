@@ -73,10 +73,12 @@ function Start() {
               </form>
             </div>
             <div className="startStartButtons">
+
               <Link to="/categories" id="playMusic">
                 FREE PLAY
               </Link>
-              <a href="#">DAILY CHALLENGE</a>
+              <Link to="/daily">DAILY CHALLENGE</Link>
+
             </div>
           </div>
           <div className="highscore">
