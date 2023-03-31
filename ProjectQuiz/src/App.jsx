@@ -8,6 +8,7 @@ import DailyChallenge from "./components/dailyChallenge";
 import NotFound from "./components/404";
 import { useEffect, useState } from "react";
 import Intro from "./components/intro";
+import BackgroundMusic from "./components/Music/BackgroundMusic";
 
 function App() {
   const [introActive, setIntroActive] = useState(true);
@@ -28,6 +29,7 @@ function App() {
         <Route path="/daily" element={<DailyChallenge />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <BackgroundMusic />
       <Footer />
     </div>
   );

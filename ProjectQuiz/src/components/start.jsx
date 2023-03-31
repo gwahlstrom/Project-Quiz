@@ -36,7 +36,11 @@ function Start() {
   return (
     <div className="start-wrapper">
       <div className="main">
-        <h1>The Quiz Game</h1>
+        <img
+          src="dailyquizine-logo-cropped.png"
+          alt="Daily Quizine logotype"
+          className="logotypeStart"
+        />
         <div className="startHighscoreWrapper">
           <div className="start">
             <div className="startInputForm">
@@ -69,8 +73,12 @@ function Start() {
               </form>
             </div>
             <div className="startStartButtons">
-              <Link to="/categories">FREE PLAY</Link>
+
+              <Link to="/categories" id="playMusic">
+                FREE PLAY
+              </Link>
               <Link to="/daily">DAILY CHALLENGE</Link>
+
             </div>
           </div>
           <div className="highscore">

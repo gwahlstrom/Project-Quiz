@@ -23,6 +23,7 @@ function Results(props) {
     nickName,
     dailyData,
     isDailyChallenge,
+
   } = useContext(QuizContext);
 
   //Calculating Scores

@@ -1,0 +1,14 @@
+.musicDiv {
+  min-width: 900px;
+}
+
+.toggleMusic {
+  border-radius: 5px;
+  height: 35px;
+  width: 45px;
+  cursor: pointer;
+}
+
+.toggleMusic img {
+  width: 30px;
+}
