@@ -4,6 +4,7 @@ import Footer from "./components/footer";
 import QuizGame from "./components/quizgame";
 import Start from "./components/start";
 import Categories from "./components/categories";
+import DailyChallenge from "./components/dailyChallenge";
 import NotFound from "./components/404";
 import { useEffect, useState } from "react";
 import Intro from "./components/intro";
@@ -24,6 +25,7 @@ function App() {
         <Route path="/" element={<Start />} />
         <Route path="/categories" element={<Categories />} />
         <Route path="/quizgame" element={<QuizGame />} />
+        <Route path="/daily" element={<DailyChallenge />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

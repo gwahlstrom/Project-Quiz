@@ -4,8 +4,14 @@ import { QuizContext } from "./context";
 import "./start.css";
 
 function Start() {
-  const { NO_OF_HIGH_SCORES, HIGH_SCORES, highScoreString, highScores, nickName, setNickName } =
-    useContext(QuizContext);
+  const {
+    NO_OF_HIGH_SCORES,
+    HIGH_SCORES,
+    highScoreString,
+    highScores,
+    nickName,
+    setNickName,
+  } = useContext(QuizContext);
 
   const [inputField, setInputField] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -64,7 +70,7 @@ function Start() {
             </div>
             <div className="startStartButtons">
               <Link to="/categories">FREE PLAY</Link>
-              <a href="#">DAILY CHALLENGE</a>
+              <Link to="/daily">DAILY CHALLENGE</Link>
             </div>
           </div>
           <div className="highscore">
