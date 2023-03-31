@@ -5,7 +5,7 @@ import "./gameMusic.css";
 const BackgroundMusic = () => {
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [volume, setVolume] = useState(0.335); // Initialize the volume state with a default value
+  const [volume, setVolume] = useState(0.2); // Initialize the volume state with a default value
   const location = useLocation();
 
   useEffect(() => {
