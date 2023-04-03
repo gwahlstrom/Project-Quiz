@@ -16,13 +16,14 @@ function Start() {
   const [inputField, setInputField] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
+  function showHighScoresNames() {
+    return highScores.map((score, index) => {
+      return <li key={index}>{score.name}</li>;
+    });
+  }
   function showHighScores() {
     return highScores.map((score, index) => {
-      return (
-        <li key={index}>
-          {score.name} — {score.score} points
-        </li>
-      );
+      return <li key={index}>{score.score}</li>;
     });
   }
 
@@ -73,18 +74,19 @@ function Start() {
               </form>
             </div>
             <div className="startStartButtons">
-
               <Link to="/categories" id="playMusic">
                 FREE PLAY
               </Link>
               <Link to="/daily">DAILY CHALLENGE</Link>
-
             </div>
           </div>
           <div className="highscore">
             <div className="insideHighscore"></div>
             <h2>Highscore</h2>
-            <ol className="highscoreList">{showHighScores()}</ol>
+            <div className="scoreWrapper">
+              <ol className="highscoreList">{showHighScoresNames()}</ol>
+              <div className="highscorePoints">{showHighScores()}</div>
+            </div>
           </div>
         </div>
       </div>
