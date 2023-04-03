@@ -132,9 +132,18 @@ input::placeholder {
   background-color: rgba(0, 0, 0, 0.3);
   color: white;
 }
+.scoreWrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
 
 .highscore li {
   text-align: left;
+}
+.highscorePoints li {
+  list-style-type: none;
+  text-align: right;
 }
 
 /* CSS */

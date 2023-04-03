@@ -154,3 +154,38 @@
 #play {
   scale: 1.5;
 }
+
+/* Media Screen settings */
+@media only screen and (max-width: 800px) {
+  .results-wrapper {
+    width: 96vw;
+  }
+  .resultsQuestion {
+    width: 86vw;
+  }
+
+  .resultsScrollBox {
+    /* width: 600px; */
+    width: 92vw;
+  }
+  .resultsScrollBox {
+    height: 70vh;
+  }
+  .resultsAnswer {
+    width: 80vw;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .resultQuestionsDiv {
+    width: 86vw;
+  }
+  .resultsInfo {
+    font-size: 0.9rem;
+  }
+  .correctAnswerColor {
+    width: 70vw;
+  }
+  .incorrectAnswerColor {
+    width: 70vw;
+  }
+}
