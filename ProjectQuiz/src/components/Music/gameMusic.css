@@ -1,5 +1,5 @@
 .musicDiv {
-  min-width: 900px;
+  width: 900px;
 }
 
 .toggleMusic {
@@ -13,8 +13,10 @@
   width: 30px;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 700px) {
   .musicDiv {
-    min-width: 96vw;
-  }
+    display: flex;
+    justify-content: center;
+    width: auto;
+    }
 }

@@ -4,7 +4,9 @@
   justify-items: center;
   align-items: center;
   height: auto;
-  margin-top: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .imageDiv {
@@ -18,8 +20,12 @@
 }
 
 .gameTitleDiv {
-  width: 200px;
+  width: auto;
   text-align: center;
+}
+
+.gameTitleDiv img {
+  width: 200px;
 }
 
 .imageDiv > img {
@@ -64,11 +70,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
   gap: 1rem;
   width: 900px;
-
-  height: 650px;
+  height: auto;
   background: rgba(207, 207, 206, 0.537);
 }
 
@@ -165,6 +169,7 @@
   padding: 10px;
   box-shadow: 5px 5px 0px 0px;
   transition: all 0.2s ease-in-out;
+  margin-bottom: 1rem;
 }
 
 .cancelBtn:hover {
@@ -211,34 +216,88 @@
   box-shadow: 1px 1px 0px 0px;
 }
 
-@media only screen and (max-width: 500px) {
-  .question-wrapper,
-  .main-questions,
-  .question,
-  .answersdiv {
+@media only screen and (max-width: 450px) {
+  .question-wrapper {
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main-questions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+  }
+
+  .topperContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+  }
+
+  .topperContainer img {
+    width: 250px;
+  }
+
+  .topicRowContainer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
     width: auto;
   }
-  .answerBtn {
-    padding: 0.5rem;
-    line-height: 1.2rem;
-    max-width: 145px;
-    height: 90px;
-    background-color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  }
-}
 
-.resultsContainer {
-  background: rgba(207, 207, 206, 0.537);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 900px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  .topic {
+    width: 170px;
+    height: auto;
+  }
+
+  .topic h2 {
+    font-size: 1rem;
+  }
+
+  .leftSideTopic {
+    width: auto;
+    padding: 0.2rem;
+    width: 90px;
+  }
+
+  .rightSideTopic {
+    width: 90px;
+    padding: 0.2rem;
+  }
+
+  .answersdiv {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 1rem;
+    color: white;
+    width: auto;
+  }
+
+  .question {
+    width: 340px;
+    height: auto;
+  }
+
+  .answerBtn {
+    width: 345px;
+    height: auto;
+  }
+
+  .cancel {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  .imageDiv {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 800px) {

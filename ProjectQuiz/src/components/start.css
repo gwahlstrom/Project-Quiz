@@ -178,7 +178,3 @@ input::placeholder {
 .start a:visited {
   color: black;
 }
-
-body {
-  background: linear-gradient(90deg, #fc466b 0%, #3f5efb 100%);
-}
