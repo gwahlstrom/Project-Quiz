@@ -46,7 +46,11 @@ function Categories() {
   return (
     <>
       <div className="container">
-        <h1 className="categoryHeadTitle">The Quiz Game</h1>
+        <img
+          src="dailyquizine-logo-cropped.png"
+          alt="Daily Quizine logotype"
+          className="categoryHeadTitle"
+        />
         <h3 className="categoryInstructions">Choose a difficulty and a category:</h3>
         <div className="categories-wrapper">
           <div className="difficulty">
@@ -147,7 +151,7 @@ function Categories() {
                 <img src="geography.svg" alt="geography icon" id="categoryIcons" name="geography" />
               </button>
               <button className="box" onClick={getRandomCategory} name="random">
-                RANDOM (not working)
+                RANDOM
                 <img src="random.svg" alt="random selection icon" id="randomIcon" name="random" />
               </button>
               <button className="box" onClick={(e) => clickHandler(e)} name="">
