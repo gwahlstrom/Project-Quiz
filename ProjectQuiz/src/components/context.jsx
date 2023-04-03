@@ -8,6 +8,8 @@ export const Context = ({ children }) => {
   const [category, setCategory] = useState("");
   const [difficulty, setDifficulty] = useState("");
   const [loading, setLoading] = useState(false);
+  const [dailyData, setDailyData] = useState([]); //for Daily challenge
+  const [isDailyChallenge, setDailyChallenge] = useState(false); //for Daily challenge
   const [nickName, setNickName] = useState("");
   //Local storage high-scores
   const NO_OF_HIGH_SCORES = 10;
@@ -59,6 +61,10 @@ export const Context = ({ children }) => {
     highScores,
     nickName,
     setNickName,
+    dailyData,
+    setDailyData,
+    isDailyChallenge,
+    setDailyChallenge,
   };
 
   return <QuizContext.Provider value={values}>{children}</QuizContext.Provider>;
