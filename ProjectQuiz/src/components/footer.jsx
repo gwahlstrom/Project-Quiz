@@ -40,10 +40,6 @@ function Footer() {
           GitHub
         </button>
         {showModalGithub ? <GithubModal setShowModal={setShowModalGithub} /> : null}
-        <button className="footerButtons" onClick={openModalContact} id="contactBtn">
-          Contact Us
-        </button>
-        {showModalContact ? <ContactModal setShowModal={setShowModalContact} /> : null}
         <button className="footerButtons" onClick={openModalAboutus} id="aboutusBtn">
           About Us
         </button>

@@ -21,8 +21,11 @@ export const Context = ({ children }) => {
 
   let url = "";
   const generateURL = () => {
-    if (category && difficulty) {
+    if (category !== "mixed" && difficulty) {
       url = `https://the-trivia-api.com/api/questions?categories=${category}&limit=10&difficulty=${difficulty}`;
+      setGameStart(true);
+    } else if (category === "mixed" && difficulty) {
+      url = `https://the-trivia-api.com/api/questions?limit=10&difficulty=${difficulty}`;
       setGameStart(true);
     } else {
       url = "https://the-trivia-api.com/api/questions?limit=10";

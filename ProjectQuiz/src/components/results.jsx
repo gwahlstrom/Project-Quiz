@@ -16,7 +16,7 @@ function Results(props) {
   }, []);
 
   useEffect(() => {
-    if (props.correctAnswer >= 10) {
+    if (props.correctAnswer === 10 || props.correctAnswer === 20) {
       setShowConfetti(true);
     }
   }, [props.correctAnswer]);
@@ -30,7 +30,6 @@ function Results(props) {
     nickName,
     dailyData,
     isDailyChallenge,
-
   } = useContext(QuizContext);
 
   //Calculating Scores
@@ -76,9 +75,7 @@ function Results(props) {
       <div className="resultsQuestion" key={index}>
         <div className="wrongOrRightDiv">
           <h2>
-            {props.userAnswers[index] === item.correctAnswer
-              ? "Correct answer"
-              : "Wrong answer"}
+            {props.userAnswers[index] === item.correctAnswer ? "Correct answer" : "Wrong answer"}
           </h2>
         </div>
         <div className="resultQuestionsDiv">
@@ -90,16 +87,16 @@ function Results(props) {
         <div className="resultsAnswer">
           {props.possibleAnswers[index].map((answer, indexAnsw) => {
             return (
-              <p
-                className={
-                  indexAnsw === indexCorrectAnswer
-                    ? "correctAnswerColor"
-                    : "incorrectAnswerColor"
-                }
-                key={answer}
-              >
-                {answer}
-              </p>
+              <div className="newCorrectIncorrect">
+                <p
+                  className={
+                    indexAnsw === indexCorrectAnswer ? "correctAnswerColor" : "incorrectAnswerColor"
+                  }
+                  key={answer}
+                >
+                  {answer}
+                </p>
+              </div>
             );
           })}
         </div>
@@ -121,8 +118,7 @@ function Results(props) {
             <h1>Results</h1>
             <h2>{props.correctAnswer >= 10 ? "WOW ALL CORRECT" : ""} </h2>
             <h2>
-              You had {props.correctAnswer} correct out of{" "}
-              {props.amountOfAnswers}!
+              You had {props.correctAnswer} correct out of {props.amountOfAnswers}!
             </h2>
           </div>
           <div className="resultsScrollBox">{results}</div>
@@ -137,8 +133,7 @@ function Results(props) {
           <div className="resultsInfo">
             <h1>Results</h1>
             <h2>
-              You had {props.correctAnswer} correct out of{" "}
-              {props.amountOfAnswers}!
+              You had {props.correctAnswer} correct out of {props.amountOfAnswers}!
             </h2>
           </div>
           <div className="resultsScrollBox">{results}</div>

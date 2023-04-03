@@ -29,10 +29,10 @@ function HelpModal({ setShowModal }) {
           <h4>
             Choose "Daily Challenge" if you want to challenge yourself to 20 difficult questions.
           </h4>
-          <p>
+          {/* <p>
             You have one try everyday, so answer carefully. Comeback each day to try and beat your
             previous score. The questions are picked from different categories.{" "}
-          </p>
+          </p> */}
           <br />
           <h4>
             After you played a game, the results will be displayed with your correct and incorrect

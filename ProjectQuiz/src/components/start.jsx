@@ -4,14 +4,8 @@ import { QuizContext } from "./context";
 import "./start.css";
 
 function Start() {
-  const {
-    NO_OF_HIGH_SCORES,
-    HIGH_SCORES,
-    highScoreString,
-    highScores,
-    nickName,
-    setNickName,
-  } = useContext(QuizContext);
+  const { NO_OF_HIGH_SCORES, HIGH_SCORES, highScoreString, highScores, nickName, setNickName } =
+    useContext(QuizContext);
 
   const [inputField, setInputField] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -77,12 +71,16 @@ function Start() {
               <Link to="/categories" id="playMusic">
                 FREE PLAY
               </Link>
-              <Link to="/daily">DAILY CHALLENGE</Link>
+              <Link to="/daily">CHALLENGE</Link>
             </div>
           </div>
           <div className="highscore">
             <div className="insideHighscore"></div>
             <h2>Highscore</h2>
+            <div className="highscoreNamePoints">
+              <p>Name</p>
+              <p>Points</p>
+            </div>
             <div className="scoreWrapper">
               <ol className="highscoreList">{showHighScoresNames()}</ol>
               <div className="highscorePoints">{showHighScores()}</div>

@@ -4,6 +4,7 @@ import Results from "./results";
 import { Link } from "react-router-dom";
 import ProgressBar from "./progressbar";
 import { useTimer } from "../Hooks/usetimer";
+import "./quizgame.css";
 
 function DailyChallenge() {
   const [counter, setCounter] = useState(0); //saves the question number
@@ -21,8 +22,7 @@ function DailyChallenge() {
     initiallyRunning: true,
   });
 
-  const { dailyData, setDailyData, setDailyChallenge } =
-    useContext(QuizContext);
+  const { dailyData, setDailyData, setDailyChallenge } = useContext(QuizContext);
 
   let indexCorrectAnswer;
 
@@ -67,8 +67,7 @@ function DailyChallenge() {
     setIsDeactive(true);
     if (
       dailyData[counter].correctAnswer === event.target.innerHTML ||
-      dailyData[counter].correctAnswer.trim() + "&nbsp;" ===
-        event.target.innerHTML
+      dailyData[counter].correctAnswer.trim() + "&nbsp;" === event.target.innerHTML
     ) {
       setUserAnswers([...userAnswers, event.target.innerHTML]);
       setCorrect(correct + 1);
@@ -192,7 +191,7 @@ function DailyChallenge() {
                 )}
               </div>
               <div className="gameTitleDiv">
-                <h1>The Quiz Game</h1>
+                <img src="/dailyquizine-logo-cropped.png" alt="logo" />
               </div>
               <div className="imageDiv">
                 {dailyData[counter] ? (

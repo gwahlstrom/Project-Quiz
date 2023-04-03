@@ -87,15 +87,10 @@ function QuizGame() {
     if (data[count] && count < 10) {
       //
       if (isDeactive === false) {
-        const answersArray = [
-          ...data[count].incorrectAnswers,
-          data[count].correctAnswer,
-        ];
+        const answersArray = [...data[count].incorrectAnswers, data[count].correctAnswer];
         answersArray.sort(() => Math.random() - 0.5);
         setCopyAnswers(answersArray);
-        indexCorrectAnswer = answersArray.findIndex(
-          (el) => el === data[count].correctAnswer
-        );
+        indexCorrectAnswer = answersArray.findIndex((el) => el === data[count].correctAnswer);
         const answersButton = answersArray.map((answer, index) => {
           return (
             <button
@@ -144,7 +139,7 @@ function QuizGame() {
                 <img src={category + ".svg"} />
               </div>
               <div className="gameTitleDiv">
-                <img src="/dailyquizine-logo.png" alt="logo" />
+                <img src="/dailyquizine-logo-cropped.png" alt="logo" />
               </div>
               <div className="imageDiv">
                 <img src={category + ".svg"} />
@@ -176,20 +171,14 @@ function QuizGame() {
                 </div>
               </>
             ) : (
-              <p>Loading...</p>
+              <p>Something went wrong, try again</p>
             )}
             <div className="answersdiv">{answers}</div>
             <div className="cancel">
-              <button
-                className="cancelBtn"
-                onClick={openModalCancel}
-                id="cancelBtn"
-              >
+              <button className="cancelBtn" onClick={openModalCancel} id="cancelBtn">
                 CANCEL
               </button>
-              {showModalCancel ? (
-                <Cancel setShowModal={setShowModalCancel} />
-              ) : null}
+              {showModalCancel ? <Cancel setShowModal={setShowModalCancel} /> : null}
             </div>
           </div>
         </div>

@@ -5,6 +5,7 @@ import { QuizContext } from "./context";
 
 function Categories() {
   const quizContext = useContext(QuizContext);
+  const [startDisabled, setStartDisabled] = useState(true);
   const { setDifficulty, setCategory, setGameStart, category, difficulty, loading } =
     useContext(QuizContext);
 
@@ -39,6 +40,7 @@ function Categories() {
 
   useEffect(() => {
     if (category && difficulty) {
+      setStartDisabled(false);
       setGameStart(true);
     }
   }, [category, difficulty]);
@@ -156,7 +158,7 @@ function Categories() {
               </button>
               <button className="box" onClick={(e) => clickHandler(e)} name="">
                 MIXED
-                <img src="mixed.svg" alt="mixed selection icon" id="categoryIcons" name="" />
+                <img src="mixed.svg" alt="mixed selection icon" id="categoryIcons" name="mixed" />
               </button>
             </div>
             {loading ? (
@@ -167,7 +169,11 @@ function Categories() {
                 <div></div>
               </div>
             ) : (
-              <Link to="/quizgame" className="startBtn">
+              <Link
+                to="/quizgame"
+                style={startDisabled ? { pointerEvents: "none" } : null}
+                className="startBtn"
+              >
                 <img src="play-fill.svg" alt="play icon" id="play" /> START
               </Link>
             )}

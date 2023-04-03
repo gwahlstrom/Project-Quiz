@@ -73,7 +73,8 @@
   gap: 1rem;
   width: 900px;
   height: auto;
-  background: rgba(207, 207, 206, 0.537);
+  background: #2a5081b4;
+  border-radius: 5px;
 }
 
 .topperContainer {
@@ -127,7 +128,7 @@
   align-items: center;
   width: 230px;
   min-height: 50px;
-  background-color: rgba(30, 49, 105, 0.74);
+  background-color: #3847a5;
   border-radius: 5px 5px 0px 0px;
   text-align: center;
   color: white;
@@ -145,7 +146,7 @@
   padding: 1rem;
   width: 790px;
   min-height: 50px;
-  background-color: rgba(30, 49, 105, 0.555);
+  background-color: #023e8b;
   border-radius: 5px;
   text-align: center;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -189,7 +190,7 @@
   padding: 0.5rem;
   line-height: 1.2rem;
   width: 400px;
-  height: 80px;
+  min-height: 120px;
   font-size: 16px;
   background-color: white;
   border: none;
@@ -216,7 +217,7 @@
   box-shadow: 1px 1px 0px 0px;
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 800px) {
   .question-wrapper {
     height: auto;
     width: 100%;
@@ -288,6 +289,7 @@
   .answerBtn {
     width: 345px;
     height: auto;
+    min-height: auto;
   }
 
   .cancel {
