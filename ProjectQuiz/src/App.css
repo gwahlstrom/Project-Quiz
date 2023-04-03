@@ -2,6 +2,13 @@
   margin: 0;
   font-family: "JetBrains Mono", monospace;
 }
+
+body {
+  background: linear-gradient(90deg, #fc466b 0%, #3f5efb 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -9,4 +16,14 @@
   align-items: center;
   gap: 1rem;
   height: 100vh;
+}
+
+@media only screen and (max-width: 700px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
 }
