@@ -12,3 +12,9 @@
 .toggleMusic img {
   width: 30px;
 }
+
+@media only screen and (max-width: 750px) {
+  .musicDiv {
+    min-width: auto;
+  }
+}

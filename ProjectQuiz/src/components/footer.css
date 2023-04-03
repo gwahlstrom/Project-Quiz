@@ -2,6 +2,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 300px;
 }
 
 .links {
@@ -18,4 +19,10 @@ footer {
 
 .footerButtons:hover {
   cursor: pointer;
+}
+
+@media only screen and (max-width: 750px) {
+  .links {
+    display: none;
+  }
 }
