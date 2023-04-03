@@ -5,14 +5,21 @@ import { QuizContext } from "./context";
 import Confetti from "react-confetti";
 
 function Results(props) {
+  const [showConfetti, setShowConfetti] = useState(false);
   const [height, setHeight] = useState(null);
   const [width, setWidth] = useState(null);
   const confetiRef = useRef(null);
 
   useEffect(() => {
-    setHeight(confetiRef.current.clientHeight);
-    setWidth(confetiRef.current.clientWidth);
+    setHeight(window.innerHeight);
+    setWidth(window.innerWidth);
   }, []);
+
+  useEffect(() => {
+    if (props.correctAnswer >= 10) {
+      setShowConfetti(true);
+    }
+  }, [props.correctAnswer]);
 
   const {
     data,
@@ -101,21 +108,48 @@ function Results(props) {
   });
 
   return (
-    <div className="results-wrapper" ref={confetiRef}>
-      <Confetti numberOfPieces={150} width={width} height={height} />
-      <div className="resultsInfo">
-        <h1>Results</h1>
-        <h2>
-          You had {props.correctAnswer} correct out of {props.amountOfAnswers}!
-        </h2>
-      </div>
-      <div className="resultsScrollBox">{results}</div>
-      <div className="playAgainDiv">
-        <a href="./" className="playAgainBtn">
-          Play Again
-        </a>
-      </div>
-    </div>
+    <>
+      {showConfetti ? (
+        <div className="results-wrapper" ref={confetiRef}>
+          <Confetti
+            numberOfPieces={150}
+            width={width}
+            height={height}
+            style={{ position: "absolute", top: 0, left: 0 }}
+          />
+          <div className="resultsInfo">
+            <h1>Results</h1>
+            <h2>{props.correctAnswer >= 10 ? "WOW ALL CORRECT" : ""} </h2>
+            <h2>
+              You had {props.correctAnswer} correct out of{" "}
+              {props.amountOfAnswers}!
+            </h2>
+          </div>
+          <div className="resultsScrollBox">{results}</div>
+          <div className="playAgainDiv">
+            <a href="./" className="playAgainBtn">
+              Play Again
+            </a>
+          </div>
+        </div>
+      ) : (
+        <div className="results-wrapper">
+          <div className="resultsInfo">
+            <h1>Results</h1>
+            <h2>
+              You had {props.correctAnswer} correct out of{" "}
+              {props.amountOfAnswers}!
+            </h2>
+          </div>
+          <div className="resultsScrollBox">{results}</div>
+          <div className="playAgainDiv">
+            <a href="./" className="playAgainBtn">
+              Play Again
+            </a>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 
