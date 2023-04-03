@@ -17,6 +17,7 @@ body {
   align-items: center;
   gap: 1rem;
   height: auto;
+  margin-top: 3rem;
 }
 
 @media only screen and (max-width: 800px) {
