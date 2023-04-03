@@ -11,7 +11,7 @@ import Intro from "./components/intro";
 import BackgroundMusic from "./components/Music/BackgroundMusic";
 
 function App() {
-  const [introActive, setIntroActive] = useState(true);
+  const [introActive, setIntroActive] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {

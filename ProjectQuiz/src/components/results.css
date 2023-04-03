@@ -3,16 +3,28 @@
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  gap: 10px;
   margin-top: 0.5rem;
-  width: 750px;
+  width: auto;
+}
+.resultsInfo h2 {
+  margin-bottom: 1rem;
 }
 
 .resultsInfo {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
+  background: #2a5081b4;
+  width: 100%;
+  height: auto;
+  color: white;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.resultsInfo h1 {
   margin-top: 1rem;
 }
 .resultsScrollBox {
@@ -20,25 +32,30 @@
   flex-direction: column;
   align-items: center;
   gap: 15px;
-  background-color: rgb(255, 192, 230, 0.4);
+  background: #2a5081b4;
   width: 850px;
-  height: 420px;
+  height: 550px;
   overflow-y: scroll;
   /*   border-left: 3px solid rgb(155, 152, 237); */
-  border: 1.5px solid black;
+
   /*   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
 }
 
 .resultsScrollBox::-webkit-scrollbar {
-  width: 6px; /* width of the entire scrollbar */
+  width: 9px; /* width of the entire scrollbar */
 }
 .resultsScrollBox::-webkit-scrollbar-track {
   background: rgb(204, 204, 204); /* color of the tracking area */
 }
 .resultsScrollBox::-webkit-scrollbar-thumb {
-  background-color: rgb(155, 152, 237); /* color of the scroll thumb */
+  background-color: #ffbb00; /* color of the scroll thumb */
   border-radius: 40px; /* roundness of the scroll thumb */
   border: none; /* creates padding around scroll thumb */
+}
+
+.newCorrectIncorrect {
+  box-shadow: 5px 5px 0px 0px;
+  border-radius: 8px;
 }
 
 .incorrectAnswerColor {
@@ -47,15 +64,16 @@
   text-align: center;
   align-items: center;
   justify-content: center;
-  background-color: rgb(238, 86, 86);
+  /* background-color: rgb(238, 86, 86); */
+  background-color: rgba(0, 0, 0, 0.3);
   color: rgb(16, 9, 86);
   border-radius: 8px;
   width: auto;
   width: 350px;
   height: 70px;
   padding: 10px;
+  color: white;
   font-size: 16px;
-  box-shadow: 5px 5px 0px 0px;
 }
 
 .correctAnswerColor {
@@ -86,7 +104,7 @@
   width: 650px;
   padding: 0.5rem;
   margin-top: 0.6rem;
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
 }
 
 .resultQuestionsDiv {
@@ -103,6 +121,7 @@
 .wrongOrRightDiv {
   margin-bottom: 1rem;
   font-size: 0.9rem;
+  color: white;
 }
 
 .resultsAnswer {
@@ -117,8 +136,15 @@
 }
 
 .playAgainDiv {
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   margin-bottom: 1rem;
-  padding: 0.5rem;
+  background: #2a5081b4;
+  width: 100%;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .playAgainBtn {
@@ -158,18 +184,15 @@
 /* Media Screen settings */
 @media only screen and (max-width: 800px) {
   .results-wrapper {
-    width: 96vw;
+    width: 100%;
   }
   .resultsQuestion {
     width: 86vw;
   }
 
   .resultsScrollBox {
-    /* width: 600px; */
-    width: 92vw;
-  }
-  .resultsScrollBox {
-    height: 70vh;
+    height: 60vh;
+    width: 100%;
   }
   .resultsAnswer {
     width: 80vw;
@@ -181,11 +204,14 @@
   }
   .resultsInfo {
     font-size: 0.9rem;
+    width: 100%;
   }
   .correctAnswerColor {
     width: 70vw;
+    height: auto;
   }
   .incorrectAnswerColor {
     width: 70vw;
+    height: auto;
   }
 }

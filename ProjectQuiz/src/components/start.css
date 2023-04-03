@@ -20,8 +20,7 @@
   height: 600px;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
-  background: rgba(207, 207, 206, 0.537);
+  background: #2a5081b4;
 }
 .startHighscoreWrapper {
   display: flex;
@@ -128,7 +127,7 @@ input::placeholder {
   width: 300px;
   height: 350px;
   border-radius: 5px;
-  gap: 10px;
+  gap: 5px;
   background-color: rgba(0, 0, 0, 0.3);
   color: white;
 }
@@ -144,6 +143,14 @@ input::placeholder {
 .highscorePoints li {
   list-style-type: none;
   text-align: right;
+}
+
+.highscoreNamePoints {
+  display: flex;
+  justify-content: space-between;
+  padding: 0rem 1rem 0.5rem 2.5rem;
+  border-bottom: 1px solid white;
+  margin: 1rem;
 }
 
 /* CSS */
@@ -177,4 +184,15 @@ input::placeholder {
 
 .start a:visited {
   color: black;
+}
+
+@media only screen and (max-width: 800px) {
+  .startHighscoreWrapper {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .main {
+    height: auto;
+    width: auto;
+  }
 }
