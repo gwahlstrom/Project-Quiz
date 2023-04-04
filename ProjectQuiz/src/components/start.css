@@ -55,6 +55,7 @@
   height: 20px;
   border: none;
   background-color: white;
+  color: black !important;
   letter-spacing: 1px;
   font-weight: bold;
   padding-left: 10px;
