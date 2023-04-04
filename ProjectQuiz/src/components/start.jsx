@@ -49,7 +49,7 @@ function Start() {
                       setInputField(event.target.value);
                       setNickName(event.target.value);
                     }}
-                    placeholder="Enter your nickname.."
+                    placeholder="Enter nickname.."
                   />
                 </div>
                 <div className="startSubmitAndBtn">
@@ -76,7 +76,7 @@ function Start() {
           </div>
           <div className="highscore">
             <div className="insideHighscore"></div>
-            <h2>Highscore</h2>
+            <h2>High Score</h2>
             <div className="highscoreNamePoints">
               <p>Name</p>
               <p>Points</p>

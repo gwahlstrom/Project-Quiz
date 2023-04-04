@@ -14,7 +14,7 @@ function HelpModal({ setShowModal }) {
       <div className="help-modal">
         <h2>Help</h2>
         <div className="helpmodal-text-container">
-          <h4>Enter your nickname at the start screen.</h4>
+          <h4>Enter your nickname at the start screen and press join.</h4>
           <p>
             Your nickname will be displayed in the highscore field once you have played and recorded
             a score.
@@ -26,9 +26,7 @@ function HelpModal({ setShowModal }) {
             each.
           </p>
           <br />
-          <h4>
-            Choose "Daily Challenge" if you want to challenge yourself to 20 difficult questions.
-          </h4>
+          <h4>Choose "Challenge" if you want to challenge yourself to 20 difficult questions.</h4>
           {/* <p>
             You have one try everyday, so answer carefully. Comeback each day to try and beat your
             previous score. The questions are picked from different categories.{" "}
@@ -37,6 +35,10 @@ function HelpModal({ setShowModal }) {
           <h4>
             After you played a game, the results will be displayed with your correct and incorrect
             answers.
+          </h4>
+          <br />
+          <h4>
+            Your high score will be stored in the local storage and displayed on the start page.
           </h4>
         </div>
         <button onClick={() => setShowModal(false)}>
