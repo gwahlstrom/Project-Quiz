@@ -87,6 +87,7 @@ body {
   cursor: pointer;
   box-shadow: 5px 5px 0px 0px;
   transition: background-color 0.2s ease-in-out, scale 0.2s ease-in-out;
+  color: black;
 }
 
 .diff-button > img {
@@ -128,6 +129,7 @@ body {
   border: none;
   cursor: pointer;
   box-shadow: 3px 3px 0px 0px;
+  color: black;
 }
 
 .box:hover {
@@ -347,6 +349,7 @@ body {
     border: none;
     cursor: pointer;
     box-shadow: 3px 3px 0px 0px;
+    color: black !important;
   }
   .dif-button-container {
     display: flex;
@@ -370,6 +373,7 @@ body {
     cursor: pointer;
     box-shadow: 5px 5px 0px 0px;
     transition: background-color 0.2s ease-in-out, scale 0.2s ease-in-out;
+    color: black !important;
   }
   .backBtn {
     display: flex;

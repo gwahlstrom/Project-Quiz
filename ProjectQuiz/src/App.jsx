@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setIntroActive(true);
-    }, 2980);
+    }, 2960);
   }, []);
 
   return (
