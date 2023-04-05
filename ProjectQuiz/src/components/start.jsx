@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { useContext, useState, useEffect } from "react";
 import { QuizContext } from "./context";
 import "./start.css";
+import React from "react";
+import Tooltip from "./tooltip";
 
 function Start() {
   const { NO_OF_HIGH_SCORES, HIGH_SCORES, highScoreString, highScores, nickName, setNickName } =
@@ -24,8 +26,8 @@ function Start() {
   function handleSubmit(event) {
     event.preventDefault();
     console.log(nickName);
-    setSubmitted(!submitted);
     setInputField("");
+    setSubmitted(!submitted);
   }
 
   return (
@@ -51,6 +53,14 @@ function Start() {
                     }}
                     placeholder="Enter nickname.."
                   />
+                  <div>
+                    <Tooltip
+                      position="top"
+                      tooltipText="If no name is submitted, 'Anonymous' will be used."
+                    >
+                      <img src="question-circle.svg" className="startInputHelp" />
+                    </Tooltip>
+                  </div>
                 </div>
                 <div className="startSubmitAndBtn">
                   {!submitted ? (
@@ -58,11 +68,18 @@ function Start() {
                       JOIN
                     </button>
                   ) : (
-                    <img
-                      src="check-lg.svg"
-                      alt="submit icon checkmark"
-                      className="submitCheckmarkImg"
-                    />
+                    // <img
+                    //   src="check-lg.svg"
+                    //   alt="submit icon checkmark"
+                    //   className="submitCheckmarkImg"
+                    // />
+                    <button type="submit" className="startSubmitButtonAnimate">
+                      <img
+                        src="check-lg.svg"
+                        alt="submit icon checkmark"
+                        className="submitCheckmarkImg"
+                      />
+                    </button>
                   )}
                 </div>
               </form>
