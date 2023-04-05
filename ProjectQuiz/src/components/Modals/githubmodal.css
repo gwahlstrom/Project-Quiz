@@ -14,7 +14,8 @@
 .github-modal {
   background-blend-mode: darken;
   z-index: 9999;
-  width: 350px;
+  width: auto;
+  padding: 0.5rem;
   height: 500px;
   text-align: center;
   background: white;
