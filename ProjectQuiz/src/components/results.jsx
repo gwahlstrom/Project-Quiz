@@ -66,9 +66,11 @@ function Results(props) {
     checkHighScore(score);
   }, []);
 
-  const correctAnswersArray = (isDailyChallenge ? dailyData : data).map((item, index) => {
-    return item.correctAnswer;
-  });
+  const correctAnswersArray = (isDailyChallenge ? dailyData : data).map(
+    (item, index) => {
+      return item.correctAnswer;
+    }
+  );
 
   function setClassName(answer, index) {
     if (
@@ -133,9 +135,11 @@ function Results(props) {
           />
           <div className="resultsInfo">
             <h1>Results</h1>
-            <h2>{props.correctAnswer >= 10 ? "WOW ALL CORRECT" : ""} </h2>
+            <h2>{props.correctAnswer === 10 ? "WOW! ALL CORRECT!" : ""} </h2>
+            <h2>{props.correctAnswer === 20 ? "WOW! ALL CORRECT!" : ""} </h2>
             <h2>
-              You had {props.correctAnswer} correct out of {props.amountOfAnswers}!
+              You had {props.correctAnswer} correct out of{" "}
+              {props.amountOfAnswers}!
             </h2>
           </div>
           <div className="resultsScrollBox">{results}</div>
@@ -150,9 +154,12 @@ function Results(props) {
           <div className="resultsInfo">
             <h1>Results</h1>
             <h2>
-              You had {props.correctAnswer} correct out of {props.amountOfAnswers}!
+              You had {props.correctAnswer} correct out of{" "}
+              {props.amountOfAnswers}!
             </h2>
-            <h3 className="resultsInfoBorder">Your answers are marked with a yellow border</h3>
+            <h3 className="resultsInfoBorder">
+              Your answers are marked with a yellow border
+            </h3>
           </div>
           <div className="resultsScrollBox">{results}</div>
           <div className="playAgainDiv">
