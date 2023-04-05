@@ -32,7 +32,7 @@
 }
 
 .github-modal a {
-  color: blue;
+  color: black !important;
   text-decoration: underline;
 }
 
