@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from "react";
 import Results from "./results";
 import "./quizgame.css";
 import { QuizContext } from "./context";
-import { Link } from "react-router-dom";
 import ProgressBar from "./progressbar";
 import { useTimer } from "../Hooks/usetimer";
 import Cancel from "./Modals/Cancel";
@@ -23,7 +22,7 @@ function QuizGame() {
     initialSeconds: 0,
     initiallyRunning: true,
   });
-  const { data, gameStart, setGameStart, category } = useContext(QuizContext);
+  const { data, category } = useContext(QuizContext);
 
   let indexCorrectAnswer;
   //for progress bar
@@ -87,15 +86,10 @@ function QuizGame() {
     if (data[count] && count < 10) {
       //
       if (isDeactive === false) {
-        const answersArray = [
-          ...data[count].incorrectAnswers,
-          data[count].correctAnswer,
-        ];
+        const answersArray = [...data[count].incorrectAnswers, data[count].correctAnswer];
         answersArray.sort(() => Math.random() - 0.5);
         setCopyAnswers(answersArray);
-        indexCorrectAnswer = answersArray.findIndex(
-          (el) => el === data[count].correctAnswer
-        );
+        indexCorrectAnswer = answersArray.findIndex((el) => el === data[count].correctAnswer);
         const answersButton = answersArray.map((answer, index) => {
           return (
             <button
@@ -180,16 +174,10 @@ function QuizGame() {
             )}
             <div className="answersdiv">{answers}</div>
             <div className="cancel">
-              <button
-                className="cancelBtn"
-                onClick={openModalCancel}
-                id="cancelBtn"
-              >
+              <button className="cancelBtn" onClick={openModalCancel} id="cancelBtn">
                 CANCEL
               </button>
-              {showModalCancel ? (
-                <Cancel setShowModal={setShowModalCancel} />
-              ) : null}
+              {showModalCancel ? <Cancel setShowModal={setShowModalCancel} /> : null}
             </div>
           </div>
         </div>

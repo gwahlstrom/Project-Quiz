@@ -16,6 +16,7 @@
   z-index: 9999;
   width: 350px;
   height: 500px;
+  text-align: center;
   background: white;
   display: flex;
   flex-direction: column;

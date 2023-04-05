@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./footer.css";
 import AboutusModal from "./Modals/AboutusModal";
-import ContactModal from "./Modals/ContactModal";
 import GithubModal from "./Modals/GithubModal";
 import HelpModal from "./Modals/HelpModal";
 import ReadmeModal from "./Modals/ReadmeModal";

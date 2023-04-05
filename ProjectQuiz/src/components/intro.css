@@ -6,7 +6,6 @@
   width: 100%;
   height: 100%;
   background-image: url("/tile_background.png");
-  /* background-image: linear-gradient(to left top, #1e0a37, #2e1958, #3b2a7c, #443ca3, #4850cd); */
   animation: backgroundDrop 3s 1 linear, move-it 5s 1 linear;
   display: flex;
   flex-direction: column;
