@@ -2,12 +2,16 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: auto;
-  height: 50px;
+  width: 860px;
+  height: 85px;
+  background-color: #2a5081b4;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 }
 
 .links {
   display: flex;
+  align-items: center;
   gap: 5rem;
 }
 
@@ -26,7 +30,7 @@ footer {
 
 @media only screen and (max-width: 800px) {
   footer {
-    width: auto;
+    width: 100%;
   }
   .links {
     gap: 1rem;

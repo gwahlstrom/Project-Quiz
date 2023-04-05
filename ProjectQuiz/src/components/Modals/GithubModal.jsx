@@ -14,7 +14,7 @@ function GithubModal({ setShowModal }) {
       <div className="github-modal">
         <img src="github.svg" alt="github icon" />
         <h2>Link to GitHub repository:</h2>
-        <a href="https://github.com/gwahlstrom/Project-Quiz">
+        <a href="https://github.com/gwahlstrom/Project-Quiz" target="_blank">
           https://github.com/gwahlstrom/Project-Quiz
         </a>
         <button onClick={() => setShowModal(false)}>

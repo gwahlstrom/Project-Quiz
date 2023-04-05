@@ -16,13 +16,19 @@ function AboutusModal({ setShowModal }) {
         <h4>This site was made by:</h4>
         <div className="aboutus-modal-text">
           <h5>Monica Codreanu</h5>
-          <a href="https://github.com/MonicaCodreanu">https://github.com/MonicaCodreanu</a>
+          <a href="https://github.com/MonicaCodreanu" target="_blank">
+            https://github.com/MonicaCodreanu
+          </a>
           <br />
           <h5>Alexander Lind</h5>
-          <a href="https://github.com/Lindetti">https://github.com/Lindetti</a>
+          <a href="https://github.com/Lindetti" target="_blank">
+            https://github.com/Lindetti
+          </a>
           <br />
           <h5>Gustav Wahlström</h5>
-          <a href="https://github.com/gwahlstrom">https://github.com/gwahlstrom</a>
+          <a href="https://github.com/gwahlstrom" target="_blank">
+            https://github.com/gwahlstrom
+          </a>
         </div>
 
         <button onClick={() => setShowModal(false)}>
