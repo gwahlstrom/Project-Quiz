@@ -14,7 +14,7 @@
 .github-modal {
   background-blend-mode: darken;
   z-index: 9999;
-  width: auto;
+  width: 350px;
   padding: 0.5rem;
   height: 500px;
   text-align: center;
@@ -31,9 +31,11 @@
   width: 100px;
 }
 
-.github-modal a:hover {
-  color: #2a5081b4;
+.github-modal a {
+  color: blue;
+  text-decoration: underline;
 }
+
 .github-modal button {
   position: absolute;
   top: 7px;
@@ -60,14 +62,4 @@
   to {
     transform: scale(1);
   }
-}
-a {
-  text-decoration: none;
-  color: black;
-  text-align: center;
-}
-
-a:visited {
-  text-decoration: none;
-  color: black;
 }
