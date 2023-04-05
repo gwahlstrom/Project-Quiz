@@ -32,6 +32,11 @@
 .readme-modal > img {
   width: 100px;
 }
+
+.readme-modal a {
+  color: blue;
+  text-decoration: underline;
+}
 .readme-modal button {
   position: absolute;
   top: 7px;
@@ -58,13 +63,4 @@
   to {
     transform: scale(1);
   }
-}
-a {
-  text-decoration: none;
-  color: black;
-}
-
-a:visited {
-  text-decoration: none;
-  color: black;
 }

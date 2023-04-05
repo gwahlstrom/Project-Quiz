@@ -20,7 +20,9 @@ function ReadmeModal({ setShowModal }) {
           <li>HTML</li>
           <li>CSS</li>
           <li>
-            <a href="https://the-trivia-api.com/">Link to API</a>
+            <a href="https://the-trivia-api.com/" target="_blank">
+              Trivia API
+            </a>
           </li>
         </ul>
         <h5>Deployed using Vercel</h5>
