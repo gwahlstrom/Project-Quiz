@@ -13,7 +13,7 @@ function AboutusModal({ setShowModal }) {
     <div className="container-modal" ref={modalRef} onClick={closeModal}>
       <div className="aboutus-modal">
         <h2>About us</h2>
-        <h4>This site was made by:</h4>
+        <h4>This app was made by:</h4>
         <div className="aboutus-modal-text">
           <h5>Monica Codreanu</h5>
           <a href="https://github.com/MonicaCodreanu" target="_blank">

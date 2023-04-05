@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import { QuizContext } from "./context";
 import "./start.css";
 import React from "react";
 import Tooltip from "./tooltip";
 
 function Start() {
-  const { NO_OF_HIGH_SCORES, HIGH_SCORES, highScoreString, highScores, nickName, setNickName } =
-    useContext(QuizContext);
+  const { highScores, nickName, setNickName } = useContext(QuizContext);
 
   const [inputField, setInputField] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -68,11 +67,6 @@ function Start() {
                       JOIN
                     </button>
                   ) : (
-                    // <img
-                    //   src="check-lg.svg"
-                    //   alt="submit icon checkmark"
-                    //   className="submitCheckmarkImg"
-                    // />
                     <button type="submit" className="startSubmitButtonAnimate">
                       <img
                         src="check-lg.svg"

@@ -70,15 +70,10 @@
   scale: 1.05;
 }
 
-/* .startSubmitButton:active {
-  transform: translate(1px, 1px);
-  box-shadow: 1px 1px 0px 0px;
-} */
-
 .startSubmitButtonAnimate {
   display: flex;
   flex-direction: column;
-  align-content: center;
+  align-items: center;
   justify-content: center;
   width: 30px;
   height: 30px;

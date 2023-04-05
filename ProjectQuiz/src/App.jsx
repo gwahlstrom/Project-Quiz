@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Footer from "./components/footer";
 import QuizGame from "./components/quizgame";
 import Start from "./components/start";

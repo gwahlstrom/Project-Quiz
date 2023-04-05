@@ -36,9 +36,6 @@
   width: 850px;
   height: 550px;
   overflow-y: scroll;
-  /*   border-left: 3px solid rgb(155, 152, 237); */
-
-  /*   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
 }
 
 .resultsScrollBox::-webkit-scrollbar {
@@ -48,7 +45,7 @@
   background: rgb(204, 204, 204); /* color of the tracking area */
 }
 .resultsScrollBox::-webkit-scrollbar-thumb {
-  background-color: #ffbb00; /* color of the scroll thumb */
+  background-color: #ffbb00 !important; /* color of the scroll thumb */
   border-radius: 40px; /* roundness of the scroll thumb */
   border: none; /* creates padding around scroll thumb */
 }
@@ -70,7 +67,7 @@
   justify-content: center;
   font-weight: bold;
   background-color: rgb(238, 86, 86);
-  color: rgb(16, 9, 86);
+  color: rgb(16, 9, 86) !important;
   border-radius: 8px;
   width: auto;
   width: 350px;
@@ -90,7 +87,7 @@
   justify-content: center;
   background-color: rgb(95, 188, 114);
   text-decoration: none;
-  color: rgb(16, 9, 86);
+  color: rgb(16, 9, 86) !important;
   border-radius: 8px;
   width: 350px;
   height: 70px;

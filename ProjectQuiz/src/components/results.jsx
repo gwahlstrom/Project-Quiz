@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useContext, useEffect, useState, useRef } from "react";
 import "./results.css";
 import { QuizContext } from "./context";
@@ -66,7 +65,6 @@ function Results(props) {
     setGameStart(false);
     checkHighScore(score);
   }, []);
-  ////////////
 
   const correctAnswersArray = (isDailyChallenge ? dailyData : data).map((item, index) => {
     return item.correctAnswer;

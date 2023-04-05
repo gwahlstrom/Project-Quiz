@@ -13,7 +13,7 @@ function ReadmeModal({ setShowModal }) {
     <div className="container-modal" ref={modalRef} onClick={closeModal}>
       <div className="readme-modal">
         <h2>Read Me</h2>
-        <h4>This site was made using the following techniques:</h4>
+        <h4>This app was made using the following techniques:</h4>
         <ul>
           <li>React</li>
           <li>Vite</li>

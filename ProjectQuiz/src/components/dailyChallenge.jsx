@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { QuizContext } from "./context";
 import Results from "./results";
-import { Link } from "react-router-dom";
 import ProgressBar from "./progressbar";
 import { useTimer } from "../Hooks/usetimer";
 import "./quizgame.css";
