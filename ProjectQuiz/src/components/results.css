@@ -64,15 +64,13 @@
   text-align: center;
   align-items: center;
   justify-content: center;
-  /* background-color: rgb(238, 86, 86); */
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgb(238, 86, 86);
   color: rgb(16, 9, 86);
   border-radius: 8px;
   width: auto;
   width: 350px;
   height: 70px;
   padding: 10px;
-  color: white;
   font-size: 16px;
 }
 
@@ -94,6 +92,21 @@
   font-size: 0.9rem;
   transition: all 0.2s ease-in-out;
   animation: pulseButton 3s infinite ease-in-out;
+}
+.otherAnswerColor {
+  display: flex;
+  letter-spacing: 1px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  border-radius: 8px;
+  width: auto;
+  width: 350px;
+  height: 70px;
+  padding: 10px;
+  font-size: 16px;
 }
 
 .resultsQuestion {

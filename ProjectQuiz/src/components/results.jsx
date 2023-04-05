@@ -66,6 +66,26 @@ function Results(props) {
     setGameStart(false);
     checkHighScore(score);
   }, []);
+  ////////////
+
+  const correctAnswersArray = (isDailyChallenge ? dailyData : data).map(
+    (item, index) => {
+      return item.correctAnswer;
+    }
+  );
+
+  function setClassName(answer, index) {
+    if (
+      answer == correctAnswersArray[index] ||
+      answer == correctAnswersArray[index].trim() + "&nbsp;"
+    ) {
+      return "correctAnswerColor";
+    } else if (answer == props.userAnswers[index]) {
+      return "incorrectAnswerColor";
+    } else if (answer != props.userAnswers[index]) {
+      return "otherAnswerColor";
+    }
+  }
 
   const results = (isDailyChallenge ? dailyData : data).map((item, index) => {
     const indexCorrectAnswer = props.possibleAnswers[index].findIndex(
@@ -75,7 +95,10 @@ function Results(props) {
       <div className="resultsQuestion" key={index}>
         <div className="wrongOrRightDiv">
           <h2>
-            {props.userAnswers[index] === item.correctAnswer ? "Correct answer" : "Wrong answer"}
+            {props.userAnswers[index] === item.correctAnswer ||
+            props.userAnswers[index] === item.correctAnswer.trim() + "&nbsp;"
+              ? "Correct answer"
+              : "Wrong answer"}
           </h2>
         </div>
         <div className="resultQuestionsDiv">
@@ -87,13 +110,8 @@ function Results(props) {
         <div className="resultsAnswer">
           {props.possibleAnswers[index].map((answer, indexAnsw) => {
             return (
-              <div className="newCorrectIncorrect">
-                <p
-                  className={
-                    indexAnsw === indexCorrectAnswer ? "correctAnswerColor" : "incorrectAnswerColor"
-                  }
-                  key={answer}
-                >
+              <div className="newCorrectIncorrect" key={indexAnsw}>
+                <p className={setClassName(answer, index)} key={answer}>
                   {answer}
                 </p>
               </div>
@@ -118,7 +136,8 @@ function Results(props) {
             <h1>Results</h1>
             <h2>{props.correctAnswer >= 10 ? "WOW ALL CORRECT" : ""} </h2>
             <h2>
-              You had {props.correctAnswer} correct out of {props.amountOfAnswers}!
+              You had {props.correctAnswer} correct out of{" "}
+              {props.amountOfAnswers}!
             </h2>
           </div>
           <div className="resultsScrollBox">{results}</div>
@@ -133,7 +152,8 @@ function Results(props) {
           <div className="resultsInfo">
             <h1>Results</h1>
             <h2>
-              You had {props.correctAnswer} correct out of {props.amountOfAnswers}!
+              You had {props.correctAnswer} correct out of{" "}
+              {props.amountOfAnswers}!
             </h2>
           </div>
           <div className="resultsScrollBox">{results}</div>
