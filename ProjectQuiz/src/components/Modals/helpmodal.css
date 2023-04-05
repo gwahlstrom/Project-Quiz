@@ -14,7 +14,7 @@
 .help-modal {
   background-blend-mode: darken;
   z-index: 9999;
-  width: 500px;
+  width: 350px;
   height: auto;
   background: white;
   display: flex;
@@ -24,6 +24,9 @@
   border-radius: 5px;
   position: relative;
   animation: animate 0.3s;
+}
+.help-modal h2 {
+  margin-top: 1rem;
 }
 .helpmodal-text-container {
   display: flex;

@@ -14,7 +14,7 @@
 .aboutus-modal {
   background-blend-mode: darken;
   z-index: 9999;
-  width: 500px;
+  width: 350px;
   height: 500px;
   background: white;
   display: flex;
@@ -25,6 +25,11 @@
   position: relative;
   animation: animate 0.3s;
 }
+
+.aboutus-modal a:hover {
+  color: #2a5081b4;
+}
+
 .aboutus-modal > img {
   width: 100px;
 }
