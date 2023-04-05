@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import ProgressBar from "./progressbar";
 import { useTimer } from "../Hooks/usetimer";
 import "./quizgame.css";
+import Cancel from "./Modals/Cancel";
 
 function DailyChallenge() {
   const [counter, setCounter] = useState(0); //saves the question number
@@ -16,6 +17,7 @@ function DailyChallenge() {
   const [stopProgress, setStopProgress] = useState(false); // for progress bar
   const [isDeactive, setIsDeactive] = useState(false);
   const [copyAnswers, setCopyAnswers] = useState(null); //a copy of the array that maps the buttons
+  const [showModalCancel, setShowModalCancel] = useState(false);
 
   const { pause, reset, running, seconds, start, stop } = useTimer({
     initialSeconds: 0,
@@ -92,6 +94,10 @@ function DailyChallenge() {
       setStopProgress(true);
     }
   }, [counter]);
+
+  const openModalCancel = () => {
+    setShowModalCancel(true);
+  };
 
   useEffect(() => {
     if (dailyData[counter] && counter < 20) {
@@ -231,9 +237,10 @@ function DailyChallenge() {
             )}
             <div className="answersdiv">{answers}</div>
             <div className="cancel">
-              <Link to="/" className="cancelBtn">
-                Cancel
-              </Link>
+              <button className="cancelBtn" onClick={openModalCancel} id="cancelBtn">
+                CANCEL
+              </button>
+              {showModalCancel ? <Cancel setShowModal={setShowModalCancel} /> : null}
             </div>
           </div>
         </div>
