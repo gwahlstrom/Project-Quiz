@@ -68,20 +68,21 @@ function Results(props) {
   }, []);
   ////////////
 
-  const correctAnswersArray = (isDailyChallenge ? dailyData : data).map(
-    (item, index) => {
-      return item.correctAnswer;
-    }
-  );
+  const correctAnswersArray = (isDailyChallenge ? dailyData : data).map((item, index) => {
+    return item.correctAnswer;
+  });
 
   function setClassName(answer, index) {
     if (
       answer == correctAnswersArray[index] ||
       answer == correctAnswersArray[index].trim() + "&nbsp;"
     ) {
+      if (answer == props.userAnswers[index]) {
+        return "correctAnswerColor userAnswer";
+      }
       return "correctAnswerColor";
     } else if (answer == props.userAnswers[index]) {
-      return "incorrectAnswerColor";
+      return "incorrectAnswerColor userAnswer";
     } else if (answer != props.userAnswers[index]) {
       return "otherAnswerColor";
     }
@@ -136,8 +137,7 @@ function Results(props) {
             <h1>Results</h1>
             <h2>{props.correctAnswer >= 10 ? "WOW ALL CORRECT" : ""} </h2>
             <h2>
-              You had {props.correctAnswer} correct out of{" "}
-              {props.amountOfAnswers}!
+              You had {props.correctAnswer} correct out of {props.amountOfAnswers}!
             </h2>
           </div>
           <div className="resultsScrollBox">{results}</div>
@@ -152,9 +152,9 @@ function Results(props) {
           <div className="resultsInfo">
             <h1>Results</h1>
             <h2>
-              You had {props.correctAnswer} correct out of{" "}
-              {props.amountOfAnswers}!
+              You had {props.correctAnswer} correct out of {props.amountOfAnswers}!
             </h2>
+            <h3 className="resultsInfoBorder">Your answers are marked with a yellow border</h3>
           </div>
           <div className="resultsScrollBox">{results}</div>
           <div className="playAgainDiv">
